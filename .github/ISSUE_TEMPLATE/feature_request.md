@@ -7,31 +7,21 @@ assignees: ''
 
 ---
 
-## We've written some code that we think might achieve the following:
+## User Story
 
-closes issue #{ISSUE_NUMBER_HERE}
+**AS A** ...
 
-## If this PR is assigned to you, please give our code a look
+**WHEN I AM** ...
 
-* If there are ways our code can be improved, please let us know so we can learn!
-* If we have code that probably isn't doing anything, tell us to delete it!
+**I WOULD LIKE TO** ...
 
-## Here is a screenshot that will help you understand what we are trying to do
+**SO THAT I CAN** ...
 
-(Don't forget a screenshot!)
+## Acceptance Criteria
 
-## Some questions we have for our reviewer are:
+* User should be able to ...
+* User should not be able to ...
 
-* Question1
-* Question2
-* Question3
+## Wireframe -- Optional
 
-## Some resources we used in writing this code were:
-
-* https://stackoverflow.com/questions/184618/what-is-the-best-comment-in-source-code-you-have-ever-encountered
-
-## Once we receive your comments:
-
-We will address them and let you know in our dedicated Slack channel!
-
-# Only then will this Pull Request be merged =)
+(Link to existing or add quick sketch here)
