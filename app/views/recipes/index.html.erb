@@ -1,0 +1,15 @@
+<h1>Listing articles</h1>
+ 
+<table>
+  <tr>
+    <th>Recipe Name</th>
+   
+  </tr>
+ 
+  <% @recipes.each do |recipe| %>
+    <tr>
+      <td><%= recipe.name %></td>
+      <td><%= link_to 'Show', recipe_path(recipe) %></td>
+    </tr>
+  <% end %>
+</table>
