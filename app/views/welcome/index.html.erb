@@ -1,4 +1,11 @@
-<h1> Welocme to Cook Memories</h1>
+<h1 class="text-center"> Welcome to Cook Memories</h1>
 
-<%= link_to 'My Recipes', controller: 'recipes' %>
-<%= link_to 'New Recipe', new_recipe_path %>
+<nav class ="navbar navbar-expand-md navbar-light bg-light">
+
+  <span class= "nav-item nav-justified">     
+    <%= link_to 'My Recipes', recipes_path, class: "btn btn-primary "  %>
+  </span>
+   <span class= "nav-item">
+    <%= link_to 'New Recipe', new_recipe_path , class: "btn "  %>
+ </span>
+</div>

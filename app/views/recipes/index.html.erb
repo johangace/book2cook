@@ -1,15 +1,22 @@
-<h1>Listing articles</h1>
+<h1 class= "text-center">Listing articles</h1>
  
-<table>
+
+<%= link_to 'New Recipe', new_recipe_path, class: "btn btn-primary " %>
+
   <tr>
-    <th>Recipe Name</th>
-   
+  <table class= "table">
+    <th>Recipe Name</th> 
   </tr>
  
   <% @recipes.each do |recipe| %>
-    <tr>
+    
       <td><%= recipe.name %></td>
       <td><%= link_to 'Show', recipe_path(recipe) %></td>
+      <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+      <td><%= link_to 'Delete', recipe_path(recipe), 
+      method: :delete,
+      data: {confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
+</div>

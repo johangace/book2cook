@@ -1,3 +1,9 @@
+<div class="form-group modal-body">
+<p>
+<strong>Image:</strong>
+ <%=image_tag (url_for(@recipe.image.variant(resize: "200x200")) if @recipe.image.attached?)%>
+</P>
+
 <p>
   <strong>Name:</strong>
   <%= @recipe.name %>
@@ -22,3 +28,9 @@
   <strong>Category:</strong>
   <%= @recipe.category %>
 </p>
+</div>
+
+<%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-primary " %>
+
+<%= link_to 'Back', recipes_path, class: "btn btn-primary " %>
+
