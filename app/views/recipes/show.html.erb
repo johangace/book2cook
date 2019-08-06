@@ -1,31 +1,30 @@
 <div class="form-group modal-body">
 <p>
-<strong>Image:</strong>
- <%=image_tag (url_for(@recipe.image.variant(resize: "200x200")) if @recipe.image.attached?)%>
-</P>
+<strong>Image:</strong></br>
+<%= image_tag( @recipe.image.attached? ? @recipe.image : 'http://bottomlessbites.com/assets/recipe-placeholder.jpg' , height: 'auto', width: '200' )%>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Name:</strong></br>
   <%= @recipe.name %>
 </p>
  
 <p>
-  <strong>Ingredients:</strong>
+  <strong>Ingredients:</strong></br>
   <%= @recipe.ingredients %>
 </p>
 
 <p>
-  <strong>Instructions:</strong>
+  <strong>Instructions:</strong></br>
   <%= @recipe.instructions %>
 </p>
 
 <p>
-  <strong>Author:</strong>
+  <strong>Author:</strong></br>
   <%= @recipe.author %>
 </p>
 
 <p>
-  <strong>Category:</strong>
+  <strong>Category:</strong></br>
   <%= @recipe.category %>
 </p>
 </div>

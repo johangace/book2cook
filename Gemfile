@@ -1,7 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+
+
+
 ruby '2.6.3'
+
+#for storing private data
+gem 'dotenv-rails'
 
 #bootstrap for styling
 gem 'bootstrap'

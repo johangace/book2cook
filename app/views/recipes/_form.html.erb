@@ -1,5 +1,6 @@
 
-<%= form_with scope: :recipe, url: recipes_path, local: true do |f| %>
+ <%= form_with scope: @recipe, url: recipes_path, local: true do |f| %>
+
 
   <% if @recipe.errors.any? %>
   <div id="error_explanation">
