@@ -1,0 +1,35 @@
+<%= form_with model: @recipe, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :name, autocomplete: "off" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.label :image, class: "btn btn-info" do %>
+      Select an Image
+      <%= f.file_field :image, hidden: true %>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :ingredients %>
+    <%= f.text_area :ingredients, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :instructions %>
+    <%= f.text_area :instructions, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.text_field :category, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :author %>
+    <%= f.text_field :author, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit nil, class: "btn btn-primary" %>
+    <%= link_to 'Back', @recipe, class: "btn btn-secondary" %>
+  </div>
+<% end %>
+
+

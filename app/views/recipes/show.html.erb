@@ -1,0 +1,30 @@
+<%= image_tag @recipe.image_url %>
+
+<div>
+  <strong>Name:</strong></br>
+  <%= @recipe.name %>
+</div>
+
+<div>
+  <strong>Ingredients:</strong></br>
+  <%= @recipe.ingredients %>
+</div>
+
+<div>
+  <strong>Instructions:</strong></br>
+  <%= @recipe.instructions %>
+</div>
+
+<div>
+  <strong>Author:</strong></br>
+  <%= @recipe.author %>
+</div>
+
+<div>
+  <strong>Category:</strong></br>
+  <%= @recipe.category %>
+</div>
+
+
+<%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-primary " %>
+
