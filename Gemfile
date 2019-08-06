@@ -6,9 +6,6 @@ ruby '2.6.3'
 #for storing private data
 gem 'dotenv-rails'
 
-#bootstrap for styling
-gem 'bootstrap'
-
 #for amazon web services
 gem "aws-sdk-s3", require: false
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
