@@ -18,17 +18,17 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
-      redirect_to @recipe
-    else 
-      render "new"
+      redirect_to @recipe, notice: "#{@recipe.name} added!"
+    else
+      redirect_to new_recipe_path, alert: "#{@recipe.errors.full_messages.to_sentence.capitalize}."
     end
   end
 
   def update
     if @recipe.update(recipe_params)
-      redirect_to @recipe
+      redirect_to @recipe, notice: "#{@recipe.name} updated!"
     else
-     render "edit"
+      redirect_to edit_recipe_path(@recipe), alert: "#{@recipe.errors.full_messages.to_sentence.capitalize}."
     end
   end
 
@@ -46,7 +46,7 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe)
-      .permit(:image, :name, :ingredients, :instructions, :author, :category )
+      .permit(:image, :name, :ingredients, :instructions, :author, :category)
   end
 
 
