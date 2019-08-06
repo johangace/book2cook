@@ -1,35 +1,30 @@
-<div class="form-group modal-body">
-<p>
-<strong>Image:</strong></br>
-<%= image_tag( @recipe.image.attached? ? @recipe.image : 'http://bottomlessbites.com/assets/recipe-placeholder.jpg' , height: 'auto', width: '200' )%>
+<%= image_tag @recipe.image_url %>
 
-<p>
+<div>
   <strong>Name:</strong></br>
   <%= @recipe.name %>
-</p>
- 
-<p>
-  <strong>Ingredients:</strong></br>
-  <%= @recipe.ingredients %>
-</p>
-
-<p>
-  <strong>Instructions:</strong></br>
-  <%= @recipe.instructions %>
-</p>
-
-<p>
-  <strong>Author:</strong></br>
-  <%= @recipe.author %>
-</p>
-
-<p>
-  <strong>Category:</strong></br>
-  <%= @recipe.category %>
-</p>
 </div>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-primary " %>
+<div>
+  <strong>Ingredients:</strong></br>
+  <%= @recipe.ingredients %>
+</div>
 
-<%= link_to 'Back', recipes_path, class: "btn btn-primary " %>
+<div>
+  <strong>Instructions:</strong></br>
+  <%= @recipe.instructions %>
+</div>
+
+<div>
+  <strong>Author:</strong></br>
+  <%= @recipe.author %>
+</div>
+
+<div>
+  <strong>Category:</strong></br>
+  <%= @recipe.category %>
+</div>
+
+
+<%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-primary " %>
 

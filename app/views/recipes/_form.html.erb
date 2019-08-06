@@ -1,53 +1,35 @@
-
- <%= form_with scope: @recipe, url: recipes_path, local: true do |f| %>
-
-
-  <% if @recipe.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@recipe.errors.count, "error") %> 
-    </h2>
-    <ul>
-      <% @recipe.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
+<%= form_with model: @recipe, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :name, autocomplete: "off" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.label :image, class: "btn btn-info" do %>
+      Select an Image
+      <%= f.file_field :image, hidden: true %>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <%= f.label :ingredients %>
+    <%= f.text_area :ingredients, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :instructions %>
+    <%= f.text_area :instructions, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :category %>
+    <%= f.text_field :category, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :author %>
+    <%= f.text_field :author, class: "form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit nil, class: "btn btn-primary" %>
+    <%= link_to 'Back', @recipe, class: "btn btn-secondary" %>
   </div>
 <% end %>
 
-<div class="form-group modal-body">
-  <%= f.label "Image" %> <br>
-  <%= f.file_field :image %>
-  
 
-  <p>
-    <%= f.label "Name" %><br>
-    <%= f.text_field :name %>
-    </p>
-
-    
-    <p>
-    <%= f.label "Ingredients" %><br>
-    <%= f.text_area :ingredients %>
-    </p
-    
-    
-    <p>
-    <%= f.label "Instructions" %><br>
-    <%= f.text_area :instructions %>
-    </p
-  
-    <%= f.label "Category" %><br>
-    <%= f.text_area :category %>
-
-    <br/>
-    <%= f.label "Author" %><br>
-    <%= f.text_area :author %>
-    </p>
-</div>
-    <p>
-    <%= f.submit %> 
-    </p>
-<% end %>
-
-<%= link_to 'Back', recipes_path, class: "btn btn-primary " %>
