@@ -1,4 +1,4 @@
 class CookbookEntry < ApplicationRecord
-  belongs_to :cookbook
+  belongs_to :book
   belongs_to :recipe
 end
