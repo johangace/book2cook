@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+#for authentication
+gem 'devise'
+
 gem 'react_on_rails'
 #for storing private data
 gem 'dotenv-rails'
