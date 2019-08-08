@@ -2,21 +2,26 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
-    @recipes = Recipe.all
+    @user = User.find_by(id: params[:user_id])
+    if @user
+      @recipes = @user.recipes
+    else
+      @recipes = Recipe.all
+    end
   end
 
   def show
   end
 
   def new
-    @recipe = Recipe.new
+    @recipe = current_user.recipes.new
   end
 
   def edit
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = current_user.recipes.new(recipe_params)
     if @recipe.save
       redirect_to @recipe, notice: "#{@recipe.name} added!"
     else
@@ -41,7 +46,11 @@ class RecipesController < ApplicationController
   private
 
   def set_recipe
-    @recipe = Recipe.find(params[:id])
+    if action_name == "show"
+      @recipe = Recipe.find(params[:id])
+    else
+      @recipe = current_user.recipes.find(params[:id])
+    end
   end
 
   def recipe_params

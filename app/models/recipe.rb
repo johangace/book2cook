@@ -1,4 +1,5 @@
 class Recipe < ApplicationRecord
+  belongs_to :user
   has_many :cookbook_entries
   has_many :books,  through: :cookbook_entries
 
