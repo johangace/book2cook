@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  # get 'hello_world', to: 'hello_world#index'
   get 'welcome/index'
-  resources :recipes
   root 'welcome#index'
+
+  resources :recipes
+
+  resources :users, only: :none do
+    resources :recipes, only: [:index]
+  end
+
 end
