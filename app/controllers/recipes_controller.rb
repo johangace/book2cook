@@ -2,14 +2,14 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
-    @recipes = Recipe.all
+    @recipes = current_user.recipes.all
   end
 
   def show
   end
 
   def new
-    @recipe = Recipe.new
+    @recipe = current_user.recipes.new
   end
 
   def edit
