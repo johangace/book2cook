@@ -1,46 +1,43 @@
-
-
 .startSection{
   background-image: url(/familyDinner.jpg);
   height:300px;
   background-repeat: repeat-y;
-  background-size:100% 100%;
-  
+  background-size:100% 100%;  
 }
-.startSection h1{
-  
+
+.startSection h1{  
   color:rgb(255, 255, 255);
   font-size:40;
   font-weight: bold;
-  
 }
+
 .buttonC{
   display:flex;
   justify-content: center;
 }
 
 .bbutton{
-  
   height:60px;
   width:250px;
   background-color: grey;
   color: white;
   text-align: center;
   border: solid black 1px;
-  
 }
-
 
 .instructionSection{
   height:300px;
 }
+
 .instructionSection h2{
   color: black;
 }
+
 .navRight{
   display:grid;
   justify-items: right;
 }
+
 .navRight li{
   display: inline;
 }
@@ -49,11 +46,13 @@
   background-color: grey;
   height:300px;
 }
+
 .instruction{
   display:flex;
   justify-content: center;
   margin:auto;
 }
+
 .steps{
   border: solid 1px  grey; 
   width:100px;
@@ -70,13 +69,10 @@
   display:flex;
   justify-content: center;
   margin-top:auto;
- 
   padding:50px;
-  
-}
-.sample{
-  padding:50px;
-  margin-bottom: auto;
-  
 }
 
+.sample{
+  padding:50px;
+  margin-bottom: auto;  
+}
