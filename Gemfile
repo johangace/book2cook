@@ -8,6 +8,7 @@ gem 'devise-bootstrap-views', '~> 1.0'
 #for authentication
 gem 'devise'
 
+gem 'prawn'
 gem 'react_on_rails'
 #for storing private data
 gem 'dotenv-rails'
