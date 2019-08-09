@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+#Data table
+gem 'hirb'
+
 gem 'devise-bootstrap-views', '~> 1.0'
 
 #for authentication

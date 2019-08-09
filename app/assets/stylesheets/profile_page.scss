@@ -1,0 +1,29 @@
+// Place all the styles related to the profile_page controller here.
+// They will automatically be included in application.css.
+
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.content{
+  display:grid;
+  justify-content: center; 
+  background-color: grey;
+  padding:50px;
+  margin:50px;
+}
+
+img{
+ height:400px;
+ padding:20px;
+ margin:auto;
+ 
+}
+
+h1{
+  margin:auto;
+  color:white;
+}
+
+h2{
+  padding:20px;
+  color: white;
+}
+
