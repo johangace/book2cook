@@ -8,9 +8,19 @@ class RecipesController < ApplicationController
     else
       @recipes = Recipe.all
     end
+    respond_to do |format|
+      format.html do
+        @recipe = Recipe.new
+      end
+      format.json do
+        render json: { recipes: @recipes }
+      end
+    end
+
   end
 
   def show
+    
   end
 
   def new
