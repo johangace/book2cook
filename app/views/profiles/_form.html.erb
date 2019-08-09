@@ -1,0 +1,19 @@
+<%= form_with model: @profile, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :name, autocomplete: "off" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :avatar %><br>
+    <%= f.label :avatar, class: "btn btn-info" do %>
+      Select an Image
+      <%= f.file_field :avatar, hidden: true %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit nil, class: "btn btn-primary" %>
+    <%= link_to 'Back', @profile, class: "btn btn-secondary" %>
+  </div>
+<% end %>
+
+
