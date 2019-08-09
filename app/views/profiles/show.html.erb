@@ -1,0 +1,6 @@
+<div class="profile-content">
+  <h1>Profile</h1>
+  <%= image_tag @profile.avatar_url %>
+  <h2>Name: <%= @profile.name %> </h2>
+  <%= link_to "Edit Profile", edit_profile_path(current_user.profile),  class: "btn btn-secondary" %>
+</div>

@@ -2,8 +2,10 @@
 
 <div>
   <strong>Name:</strong></br>
-  <%= @recipe.name %>
+  <%= @recipe.name %> (<%= @recipe.user.profile.name %>)
 </div>
+
+
 
 <div>
   <strong>Ingredients:</strong></br>
