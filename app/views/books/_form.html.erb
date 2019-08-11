@@ -5,6 +5,13 @@
     <%= f.text_field :name, class: "form-control" %>
   </div>
 
+  <% @recipes.each do |recipe| %>
+    <div class="form-group">
+      <%= f.label recipe.name %>
+      <%= f.check_box :recipes, { multiple: true }, recipe %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit nil, class: "btn btn-primary" %>
     <%= link_to 'Back', @book, class: "btn btn-secondary" %>
