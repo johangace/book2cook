@@ -2,16 +2,23 @@ class BooksController < ApplicationController
   def index 
     @books = Book.all
     
-    @user = User.find_by(id: params[:user_id])
-    if @user
-      @books = @user.books
+    if params[:user_id]
+      @user = User.find_by(id: params[:user_id])
+      if @user
+        @books = @user.books
+      else 
+        redirect_to '/books?mine=true'
+      end
+
     else
       @books = Book.all
+      @books = current_user.books if (params[:mine])
     end
   end
   
   def new
     @book = current_user.books.new
+    @recipes = current_user.recipes
   end
 
   def edit
@@ -19,6 +26,7 @@ class BooksController < ApplicationController
   end
 
   def create
+    p params[:recipes]
     @book = current_user.books.new(book_params)
     if @book.save
       redirect_to @book, notice: "#{@book.name} added!"
@@ -51,7 +59,8 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book)
-      .permit( :name, :id )
+      .permit(:name, :id)
   end
+  
 
 end
