@@ -7,7 +7,7 @@ ruby '2.6.3'
 gem 'hirb'
 
 gem 'devise-bootstrap-views', '~> 1.0'
-
+gem 'pry-rails'
 #for authentication
 gem 'devise'
 
