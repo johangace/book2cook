@@ -5,12 +5,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :recipes
-  resources :books ,  only: [ :show, :create, :new]
+  resources :books 
 
   resources :users, only: :none do
     resources :recipes, only: [:index]
+    resources :books, only: [:index]
 
-  
   end
   
   resources :profiles, only: [:show, :edit, :update]
