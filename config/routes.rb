@@ -16,9 +16,6 @@ Rails.application.routes.draw do
     resources :recipes, only: [:index]
     resources :books, only: [:index]
   end
-<<<<<<< HEAD
-  
+
   resources :profiles, only: [:show, :edit, :update]
-=======
->>>>>>> many small fixes
 end
