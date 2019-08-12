@@ -22,11 +22,10 @@ class BooksController < ApplicationController
   end
 
   def edit
-    @book = Book.find(params[:id])
+    # @book = Book.find(params[:id])
   end
 
   def create
-    p params[:recipes]
     @book = current_user.books.new(book_params)
     if @book.save
       redirect_to @book, notice: "#{@book.name} added!"
@@ -36,7 +35,6 @@ class BooksController < ApplicationController
   end
 
   def update
-    
     if @book.update(book_params)
       redirect_to @books, notice: "#{@book.name} updated!"
     else
