@@ -7,7 +7,6 @@ class RecipesController < ApplicationController
       @recipes = @user.recipes
     else
       @recipes = Recipe.all
-      @recipes = current_user.recipes if params[:mine]
     end
   end
 

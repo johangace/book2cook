@@ -5,13 +5,20 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :recipes
-  resources :books 
+
+  resources :books do
+    resources :recipes, only: [:index] do
+      resource :cookbook_entries, only: [:create, :destroy]
+    end
+  end
 
   resources :users, only: :none do
     resources :recipes, only: [:index]
     resources :books, only: [:index]
-
   end
+<<<<<<< HEAD
   
   resources :profiles, only: [:show, :edit, :update]
+=======
+>>>>>>> many small fixes
 end
