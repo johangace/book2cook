@@ -14,6 +14,8 @@ class Book < ApplicationRecord
        page_size: [450, 666],
       page_layout: :portrait
     ) do |pdf|
+      pdf.image Rails.root.join("public", "background.png"), width: 300, at: [0,666]
+
       pdf.move_down 250
       pdf.font "Times-Roman", style: :bold
       pdf.font_size(40) { pdf.text name, align: :center }
