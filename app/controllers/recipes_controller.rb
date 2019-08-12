@@ -22,6 +22,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = current_user.recipes.new(recipe_params)
+    
     if @recipe.save
       redirect_to @recipe, notice: "#{@recipe.name} added!"
     else

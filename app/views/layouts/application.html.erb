@@ -24,11 +24,19 @@
             <li class="nav-item <%= 'active' if current_page?(user_recipes_path(current_user)) %>">
               <%= link_to "My Recipes", user_recipes_path(current_user), class: "nav-link" %>
             </li>
+            <li class="nav-item <%= 'active' if current_page?(user_books_path(current_user)) %>">
+              <%= link_to "My Books", user_books_path(current_user), class: "nav-link" %>
+            </li>
             <li class="nav-item <%= 'active' if current_page?(new_recipe_path) %>">
               <%= link_to "New Recipe", new_recipe_path, class: "nav-link" %>
             </li>
           </ul>
           <ul class="ml-auto navbar-nav">
+            <% if current_book.present? %>
+              <li class="nav-item">
+                <%= link_to "Working on: #{current_book.name} <span class='badge badge-info badge-pill'>#{current_book.recipes.count} Recipes</span>".html_safe, current_book, class: "nav-link", target: "_blank" %>
+              </li>
+            <% end %>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <%= current_user.email %>

@@ -8,16 +8,32 @@
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
+        <% if current_book.present? %>
+          <td>
+            <% if current_book.recipes.include?(recipe) %>
+              <%= button_to "Remove from #{current_book.name}",
+                  book_recipe_cookbook_entries_path(current_book, recipe),
+                  method: :delete,
+                  class: "btn btn-danger" %>
+            <% else %>
+              <%= button_to "Add to #{current_book.name}",
+                  book_recipe_cookbook_entries_path(current_book, recipe),
+                  class: "btn btn-primary" %>
+            <% end %>
+          </td>
+        <% end %>
         <td><%= link_to recipe.name, recipe %></td>
         <td>
-          <div class="btn-group float-right">
-            <%= link_to 'Edit', edit_recipe_path(recipe), class: "btn btn-secondary" %>
-            <%= link_to 'Delete',
-                recipe,
-                method: :delete,
-                data: {confirm: 'Are you sure?' },
-                class: "btn btn-danger" %>
-          </div>
+          <% if recipe.user == current_user %>
+              <div class="btn-group float-right">
+                <%= link_to 'Edit', edit_recipe_path(recipe), class: "btn btn-secondary" %>
+                <%= link_to 'Delete',
+                    recipe,
+                    method: :delete,
+                    data: {confirm: 'Are you sure?' },
+                    class: "btn btn-danger" %>
+              </div>
+          <% end %>
         </td>
       </tr>
     <% end %>
