@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
     else
       @recipes = Recipe.all
     end
+    @recipes = @recipes.search(params[:term]) if params[:term].present?
     respond_to do |format|
       format.html do
         @recipe = Recipe.new
@@ -20,7 +21,7 @@ class RecipesController < ApplicationController
   end
 
   def show
-    
+   
   end
 
   def new
@@ -61,12 +62,12 @@ class RecipesController < ApplicationController
     else
       @recipe = current_user.recipes.find(params[:id])
     end
-  end
 
   def recipe_params
     params.require(:recipe)
       .permit(:image, :name, :ingredients, :instructions, :author, :category)
   end
+end
 
 
 end
