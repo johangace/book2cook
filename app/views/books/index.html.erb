@@ -7,12 +7,12 @@
   <% @books.each do |book| %>
     <div class= "bookItems">
       <img src="/book.png" class="bookImage"alt="">
-      <p><%= link_to  book.name, book , target: :_blank %> </p>
+      <p><%= link_to  book.name, book %></p>
       <%= link_to 'Edit', edit_book_path(book), class: "btn btn-secondary",  target: :_blank %>
       <%= link_to 'Delete',
         book,
         method: :delete,
-        data: {confirm: 'Are you sure?' },
+        data: {confirm: 'Are you sure?'},
         class: "btn btn-danger" %>
     </div>
   <% end %>
