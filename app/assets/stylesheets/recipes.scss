@@ -4,17 +4,20 @@
   background:#f17908;
   border-radius: 10px;
 }
+
 .leftContent{
   padding:10px;
   float: left;
   width: 50%;
   height: 100%;;
 }
+
 .rightContent{
   padding:20px;
-  float: left;
+  float: right;
   width: 50%;
 }
+
 .imageIcon{
   color:pink;
   background-color:blue;
@@ -22,16 +25,19 @@
   width:225px;
   background-image: url("/photo.png")
 }
+
 .textBox{
   height:150px;
   width:300px;
   border-radius: 10px;
 }
+
 label{
   font-weight: bold;
   color:white;
   font-size:20px;
 }
+
 .createButton{
   background-color:#8d5022;
   border: 2px solid #8d5022;
@@ -39,6 +45,7 @@ label{
   height:50px;
   border-radius: 5px;
 }
+
 .backButton{
   background-color:#8d5022;
   border: 2px solid #8d5022;
@@ -47,6 +54,7 @@ label{
   width:200px;
   border-radius: 5px;
 }
+
 .actions{
   text-align: center;
 }
