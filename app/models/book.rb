@@ -9,7 +9,7 @@ class Book < ApplicationRecord
 
   def make_pdf
     Prawn::Document.generate(
-     "tmp/books/cookbook#{id}.pdf",
+     "tmp/cookbook#{id}.pdf",
     #  :background => "app/assets/images/frame1.jpeg",
        page_size: [450, 666],
       page_layout: :portrait

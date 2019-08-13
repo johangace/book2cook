@@ -1,5 +1,7 @@
-<h1 class="text-center">Listing Recipes</h1>
-
+<h1 class="text-center"><%= @user.profile.name %>'s Recipes</h1>
+<div class="text-center mb-2">
+  <%= image_tag @user.profile.avatar_url("200x200"), width: 200 %>
+</div>
 <div class="text-center mb-2">
   <%= link_to 'New Recipe', new_recipe_path, class: "btn btn-primary" %>
 </div>

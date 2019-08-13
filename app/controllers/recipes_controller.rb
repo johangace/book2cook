@@ -2,12 +2,8 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
   def index
-    @user = User.find_by(id: params[:user_id])
-    if @user
-      @recipes = @user.recipes
-    else
-      @recipes = Recipe.all
-    end
+    @user = User.find(params[:user_id])
+    @recipes = @user.recipes
   end
 
   def show

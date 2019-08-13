@@ -1,1 +1,26 @@
 <h1>Welcome</h1>
+<h3>Recently Added Recipes</h3>
+
+<table class="table">
+  <tbody>
+    <% @recipes.each do |recipe| %>
+      <tr>
+        <% if current_book.present? %>
+          <td>
+            <% if current_book.recipes.include?(recipe) %>
+              <%= button_to "Remove from #{current_book.name}",
+                  book_recipe_cookbook_entries_path(current_book, recipe),
+                  method: :delete,
+                  class: "btn btn-danger" %>
+            <% else %>
+              <%= button_to "Add to #{current_book.name}",
+                  book_recipe_cookbook_entries_path(current_book, recipe),
+                  class: "btn btn-primary" %>
+            <% end %>
+          </td>
+        <% end %>
+        <td><%= link_to recipe.name, recipe %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
