@@ -5,7 +5,7 @@
       <%= f.text_field :name, class: "form-control" %>
       <%= f.label :image %><br>
       <%= f.label :image, class: "imageIcon" do %>
-      <%= f.file_field :image, hidden: true %>
+        <%= f.file_field :image, hidden: true %>
       <% end %>
       <br>
       <%= f.label :author %>
@@ -23,7 +23,7 @@
       <%= f.submit nil, class: "createButton" %>
       <%= link_to 'Back', @recipe, class: "createButton" %>
     </div>
-    <% end %>
+  <% end %>
 </div>
 
 
