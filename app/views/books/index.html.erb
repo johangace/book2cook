@@ -8,7 +8,7 @@
     <div class= "bookItems">
       <img src="/book.png" class="bookImage"alt="">
       <p><%= link_to  book.name, book %></p>
-      <%= link_to 'Edit', edit_book_path(book), class: "btn btn-secondary",  target: :_blank %>
+      <%= link_to 'Edit', edit_book_path(book), class: "btn btn-secondary" %>
       <%= link_to 'Delete',
         book,
         method: :delete,
