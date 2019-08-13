@@ -1,26 +1,19 @@
-<h1> I am the books page </h1>
+<h1 class="bookTitle">My Books</h1>
 
 <div class="text-center mb-2">
-<%= link_to "New Book",   new_book_path, class: "btn btn-primary",  target: :_blank %>
+  <%= link_to "+", new_book_path, class: "addBook" %>
 </div>
-
-  <table class="table">
-  <tbody>
+<div class="bookContainer">
   <% @books.each do |book| %>
-      <tr>
-      <td> <%= link_to  book.name, book , target: :_blank %> </td>
-
-        <td>
-          <div class="btn-group float-right">
-          <%= link_to 'Edit', edit_book_path(book), class: "btn btn-secondary",  target: :_blank %>
-          <%= link_to 'Delete',
-                book,
-                method: :delete,
-                data: {confirm: 'Are you sure?' },
-                class: "btn btn-danger" %>
-          </div>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <div class= "bookItems">
+      <img src="/book.png" class="bookImage"alt="">
+      <p><%= link_to  book.name, book %></p>
+      <%= link_to 'Edit', edit_book_path(book), class: "btn btn-secondary",  target: :_blank %>
+      <%= link_to 'Delete',
+        book,
+        method: :delete,
+        data: {confirm: 'Are you sure?'},
+        class: "btn btn-danger" %>
+    </div>
+  <% end %>
+</div>
