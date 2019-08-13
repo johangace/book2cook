@@ -1,6 +1,7 @@
 .bookTitle{
   text-align: center;
 }
+
 .bookImage{
   height:200px;
 }
@@ -14,10 +15,12 @@
   text-align: center;
   margin:10px;
 }
+
 .bookItems{
   margin:10px;
   background-color: grey;
 }
+
 .addBook{
   color: white;
   border: 1px solid grey;
@@ -27,10 +30,8 @@
   border-radius: 90%;
   background-color: grey;
 }
+
 .addBook:hover{
   color:black;
   text-decoration: none;
 }
-
-
-
