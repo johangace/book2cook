@@ -11,7 +11,7 @@ User.destroy_all
 #Create User
 user = User.create(email:"someguy@email.com", password:"password")
 
-#Create sandwhich recipe
+#Create sandwich recipe
 sandwich = Recipe.create(
   name: "Sandwich",
   ingredients: "Bread\r\nCheese\r\nHam",
