@@ -33,7 +33,7 @@ class BooksController < ApplicationController
 
 
   def show
-    send_file "tmp/books/cookbook#{@book.id}.pdf", type: 'application/pdf', disposition: 'inline'
+    send_file "tmp/cookbook#{@book.id}.pdf", type: 'application/pdf', disposition: 'inline'
   end
 
   def destroy

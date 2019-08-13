@@ -1,10 +1,5 @@
-<h1 class="text-center"><%= @user.profile.name %>'s Recipes</h1>
-<div class="text-center mb-2">
-  <%= image_tag @user.profile.avatar_url("200x200"), width: 200 %>
-</div>
-<div class="text-center mb-2">
-  <%= link_to 'New Recipe', new_recipe_path, class: "btn btn-primary" %>
-</div>
+<h1>Welcome</h1>
+<h3>Recently Added Recipes</h3>
 
 <table class="table">
   <tbody>
@@ -25,18 +20,6 @@
           </td>
         <% end %>
         <td><%= link_to recipe.name, recipe %></td>
-        <td>
-          <% if recipe.user == current_user %>
-              <div class="btn-group float-right">
-                <%= link_to 'Edit', edit_recipe_path(recipe), class: "btn btn-secondary" %>
-                <%= link_to 'Delete',
-                    recipe,
-                    method: :delete,
-                    data: {confirm: 'Are you sure?' },
-                    class: "btn btn-danger" %>
-              </div>
-          <% end %>
-        </td>
       </tr>
     <% end %>
   </tbody>

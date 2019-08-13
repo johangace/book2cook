@@ -3,8 +3,10 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   root 'welcome#index'
+  resources :recipes, except: [:index]
+  
 
-  resources :recipes
+  resource :dashboard, only: [:show]
 
   resources :books do
     resources :recipes, only: [:index] do
