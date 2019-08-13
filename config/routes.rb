@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :recipes
 
-  resource :dashboard, only: [:index]
+  resource :dashboard, only: [:show]
 
   resources :books do
     resources :recipes, only: [:index] do
