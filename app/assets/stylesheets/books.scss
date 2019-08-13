@@ -1,0 +1,38 @@
+h1{
+  text-align: center;
+}
+img{
+  height:200px;
+}
+a{
+  color:white;
+}
+.bookContainer{
+  display: grid;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  padding:20px;
+  grid-template-columns: auto auto auto auto;
+  text-align: center;
+  margin:10px;
+}
+.bookItems{
+  margin:10px;
+  background-color: grey;
+}
+.addBook{
+  color: white;
+  border: 1px solid grey;
+  font-size: 30px;
+  padding: 10px;
+  margin:5px;
+  border-radius: 90%;
+  background-color: grey;
+}
+.addBook:hover{
+  color:black;
+  text-decoration: none;
+}
+
+
+
