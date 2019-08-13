@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   root 'welcome#index'
-  get '/dashboard' => 'dashboard#index'
-
   resources :recipes
+
+  resource :dashboard, only: [:index]
 
   resources :books do
     resources :recipes, only: [:index] do
