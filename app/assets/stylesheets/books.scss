@@ -1,12 +1,10 @@
-h1{
+.bookTitle{
   text-align: center;
 }
-img{
+.bookImage{
   height:200px;
 }
-a{
-  color:white;
-}
+
 .bookContainer{
   display: grid;
   grid-row-start: 1;
