@@ -1,13 +1,8 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:edit, :update, :destroy]
+  before_action :set_book, only: [:edit, :update, :destroy, :show]
 
   def index
-    @user = User.find_by(id: params[:user_id])
-    if @user
-      @books = @user.books
-    else
-      @books = Book.all
-    end
+    @books = current_user.books
   end
   
   def new
@@ -30,7 +25,7 @@ class BooksController < ApplicationController
   def update
     if @book.update(book_params)
       session[:book_id] = @book.id
-      redirect_to @books, notice: "#{@book.name} updated!"
+      redirect_to books_path, notice: "#{@book.name} updated!"
     else
       redirect_to edit_book_path(@book), alert: "#{@book.errors.full_messages.to_sentence.capitalize}."
     end
@@ -38,14 +33,13 @@ class BooksController < ApplicationController
 
 
   def show
-    @book = Book.find(params[:id])
-    session[:book_id] = @book.id
     send_file "tmp/books/cookbook#{@book.id}.pdf", type: 'application/pdf', disposition: 'inline'
   end
 
   def destroy
     @book.destroy
-    redirect_to books_path
+    session[:book_id] = nil
+    redirect_to books_path, notice: "#{@book.name} deleted!"
   end
 
   private
