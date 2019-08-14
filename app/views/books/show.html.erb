@@ -1,0 +1,27 @@
+<div id="container" class="book-pdf-container"></div>
+
+<script>
+$(document).on("turbolinks:load", function(){
+  $('#container').FlipBook({
+    pdf: '<%= url_for(@book.interior_pdf)%>',
+    template: {
+      html: '/templates/default-book-view.html',
+      links: [
+        {
+          rel: 'stylesheet',
+          href: '/css/font-awesome.min.css'
+        }
+      ],
+      styles: [
+        '/css/white-book-view.css'
+      ],
+      links: [{
+        rel: 'stylesheet',
+        href: '/css/font-awesome.min.css'
+      }],
+      script: '/js/default-book-view.js'
+    }
+  })
+})
+
+</script>

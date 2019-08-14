@@ -3,15 +3,16 @@ class Book < ApplicationRecord
   has_many :cookbook_entries
   has_many :recipes, through: :cookbook_entries
 
+  has_one_attached :interior_pdf
+
   validates :name, presence: true
 
-  after_save :make_pdf
+  after_save :make_pdf, if: :changed?
 
   def make_pdf
     Prawn::Document.generate(
-     "tmp/cookbook#{id}.pdf",
-    #  :background => "app/assets/images/frame1.jpeg",
-       page_size: [450, 666],
+      "tmp/cookbook#{id}.pdf",
+      page_size: [450, 666],
       page_layout: :portrait
     ) do |pdf|
       pdf.image Rails.root.join("public", "background.png"), width: 300, at: [0,666]
@@ -23,7 +24,7 @@ class Book < ApplicationRecord
       pdf.move_down 10
       pdf.font "Helvetica", style: :italic
       pdf.text "Meals with XXX", align: :center
-    
+
       pdf.start_new_page
 
       recipes.each do |recipe|
@@ -53,8 +54,6 @@ class Book < ApplicationRecord
       }
       pdf.number_pages " <page> ", options
     end
+    self.interior_pdf.attach(io: File.open(Rails.root.join('tmp', "cookbook#{id}.pdf")), filename: 'interior.pdf')
   end
 end
-
-
-
