@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2019_08_10_183211) do
   create_table "profiles", force: :cascade do |t|
     t.string "name"
     t.string "city"
-    t.string "country"
     t.string "phone_number"
     t.integer "zipcode"
     t.string "street"

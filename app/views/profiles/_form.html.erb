@@ -1,6 +1,6 @@
 <%= form_with model: @profile, local: true do |f| %>
   <div class="form-group">
-    <%= f.label :name, autocomplete: "off", class: "nameLabel" %>
+    <%= f.label :name, autocomplete: "off" %>
     <%= f.text_field :name, class: "form-control" %>
   </div>
 
@@ -13,32 +13,27 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :street, autocomplete: "off", class: "nameLabel" %>
+    <%= f.label :street, autocomplete: "off" %>
     <%= f.text_field :street, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :city, autocomplete: "off", class: "nameLabel" %>
+    <%= f.label :city, autocomplete: "off" %>
     <%= f.text_field :city, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :state, autocomplete: "off", class: "nameLabel" %>
+    <%= f.label :state, autocomplete: "off" %>
     <%= f.text_field :state, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :zipcode, autocomplete: "off", class: "nameLabel" %>
+    <%= f.label :zipcode, autocomplete: "off" %>
     <%= f.text_field :zipcode, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :country, autocomplete: "off", class: "nameLabel" %>
-    <%= f.text_field :country, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :phone_number, autocomplete: "off", class: "nameLabel" %>
+    <%= f.label :phone_number, autocomplete: "off" %>
     <%= f.text_field :phone_number, class: "form-control" %>
   </div>
 
