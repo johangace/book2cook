@@ -1,25 +1,25 @@
 #wholeBody{
-  border: solid 1px red; 
+  // border: solid 1px red; 
   height: 100rem;
   background: white;
-
 }
 .startSection{
   background-image: url(/dinnertable1.jpeg);
   height: 25rem;
-  background-repeat: repeat-y;
+  height: 900px;
+  background-repeat: none;
   background-size: 100%;
   text-align: center;
   padding: 9.5rem
 }
 .getStartedWrapper{
+  padding: 20rem;
   justify-content: center;
 }
 .startSection h1{  
   color:rgb(255, 255, 255);
   font-size:40;
   font-family: 'Judson', serif;
-;
 }
 .welcomeButton{
   height:60px;
@@ -27,37 +27,28 @@
   background-color: #C8502A;
   color: white;
   text-align: center;
+  border-color: transparent;
 }
-
-.instructionSection{
-  height:300px;
-}
-
-.instructionSection h2{
-  color: black;
-}
-
 .navRight{
   display:grid;
   justify-items: right;
 }
-
 .navRight li{
   display: inline;
 }
-
-.sampleSection{
-  background-color:#D4B38B;
-  height:300px;
-}
-
 .instruction{
   display:flex;
   justify-content: center;
   margin:auto;
+  height: 500px;
 }
-
-.steps{
+.instructionSection{
+  height:300px;
+}
+.instructionSection h2{
+  color: black;
+}
+.stepsCircles{
   border: solid 1px  grey; 
   width:100px;
   height:100px;
@@ -67,16 +58,36 @@
   font-size:40px;
   padding:15px;
   color:white;
+  display: inline-block;
 }
-
+.stepsTextContainer{
+  margin: 60px 60px 60px 60px;
+  width: 100vw;
+  display: inline-flex;
+  justify-content: center;
+}
 .sampleSection{
   display:flex;
   justify-content: center;
   margin-top:auto;
   padding:50px;
+  background-color:#D4B38B;
+  height:400px;
 }
-
 .sample{
   padding:50px;
   margin-bottom: auto;  
+}
+.step1{
+  margin: 60px;
+  display: grid;
+  text-align: center;
+}
+.step2{
+  margin: 60px;
+  display: grid;
+}
+.step3{
+  margin: 60px;
+  display: grid;
 }
