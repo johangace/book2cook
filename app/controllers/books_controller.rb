@@ -33,7 +33,9 @@ class BooksController < ApplicationController
 
 
   def show
-    send_file "tmp/cookbook#{@book.id}.pdf", type: 'application/pdf', disposition: 'inline'
+    # send_file "tmp/cookbook#{@book.id}.pdf", type: 'application/pdf', disposition: 'inline'
+    send_file "tmp/cover#{@book.id}.pdf", type: 'application/pdf', disposition: 'inline'
+
   end
 
   def destroy
@@ -49,6 +51,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:name)
+    params.require(:book).permit(:name, :subtitle, :dedication, :image)
   end
 end
