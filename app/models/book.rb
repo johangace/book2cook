@@ -2,7 +2,8 @@ class Book < ApplicationRecord
   belongs_to :user
   has_many :cookbook_entries
   has_many :recipes, through: :cookbook_entries
-
+  
+  has_one_attached :image
   validates :name, presence: true
 
   after_save :make_pdf
