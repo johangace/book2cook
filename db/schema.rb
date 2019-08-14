@@ -55,6 +55,11 @@ ActiveRecord::Schema.define(version: 2019_08_10_183211) do
 
   create_table "profiles", force: :cascade do |t|
     t.string "name"
+    t.string "city"
+    t.string "phone_number"
+    t.integer "zipcode"
+    t.string "street"
+    t.string "state"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
