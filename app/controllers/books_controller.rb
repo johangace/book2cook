@@ -33,6 +33,29 @@ class BooksController < ApplicationController
 
 
   def show
+    response = HTTParty.post(Lulu.base_url+'/print-job-cost-calculations/',
+      body: {
+        "line_items" => [{
+          "pod_package_id" => "0600X0900BWSTDPB060UW444MXX",
+          "quantity" => 1,
+          # "page_count" => @book.recipes.count * 2 + 2
+          "page_count": 32
+        }],
+        "shipping_address" => {
+        "city" => @book.user.profile.city,
+        "country_code" => "US",
+        "postcode" => @book.user.profile.zipcode,
+        "state_code" => @book.user.profile.state,
+        "street1" => @book.user.profile.street
+        },
+        "shipping_level" => "MAIL"
+      }.to_json,
+      headers: {
+        "Content-Type" => "application/json",
+        "Authorization" => "Bearer #{Lulu.token}"
+      }
+    )
+    @price = JSON.parse(response.body)["total_cost_incl_tax"]
   end
 
   def destroy
