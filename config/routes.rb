@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :recipes, except: [:index]
   
 
+   get 'books/view_cover'
+
   resource :dashboard, only: [:show]
 
   resources :books do

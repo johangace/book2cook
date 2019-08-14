@@ -33,8 +33,8 @@ class BooksController < ApplicationController
 
 
   def show
-    # send_file "tmp/cookbook#{@book.id}.pdf", type: 'application/pdf', disposition: 'inline'
-    send_file "tmp/cover#{@book.id}.pdf", type: 'application/pdf', disposition: 'inline'
+     send_file "tmp/cookbook#{@book.id}.pdf", type: 'application/pdf', disposition: 'inline'
+     #send_file "tmp/cover#{@book.id}.pdf", type: 'application/pdf', disposition: 'inline'
 
   end
 
@@ -44,6 +44,10 @@ class BooksController < ApplicationController
     redirect_to books_path, notice: "#{@book.name} deleted!"
   end
 
+  def view_cover
+    send_file "tmp/cover#{@book.id}.pdf", type: 'application/pdf', disposition: 'inline'
+  end
+ 
   private
 
   def set_book
