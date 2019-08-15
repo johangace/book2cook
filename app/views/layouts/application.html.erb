@@ -47,7 +47,7 @@
             <% if current_book.present? %>
             <div class="search"><%= react_component 'Search' %></div>
               <li class="nav-item">
-                <%= link_to "Working on: #{current_book.name} <span class='badge badge-info badge-pill'>#{current_book.recipes.count} Recipes</span>".html_safe, current_book, class: "nav-link", target: "_blank" %>
+                <%= link_to "Working on: #{current_book.name} <span class='badge badge-info badge-pill'>#{current_book.recipes.count} Recipes</span>".html_safe, edit_book_path(current_book), class: "nav-link", target: "_blank" %>
               </li>
             <% end %>
             <li class="nav-item dropdown">
