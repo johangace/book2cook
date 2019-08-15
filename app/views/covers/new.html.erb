@@ -1,0 +1,6 @@
+
+  <%= form_with model: @cover, local: true do |img| %>  
+    <%= img.label :cover %><br>
+      <%= img.label :image, class: "imageIcon" do %>
+        <%= img.file_field :image, hidden: true %>
+      <% end %>

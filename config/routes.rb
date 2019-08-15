@@ -4,11 +4,14 @@ Rails.application.routes.draw do
   get 'welcome/index'
   root 'welcome#index'
   resources :recipes, except: [:index]
-  
+
+  resources :cover , except: [:index]
+
 
   resource :dashboard, only: [:show]
 
   resources :books do
+     resources :cover, only: [:index]
     resources :recipes, only: [:index] do
       resource :cookbook_entries, only: [:create, :destroy]
     end
