@@ -17,6 +17,7 @@
 
 <table class="table">
   <tbody>
+  <% if current_book.present? %>
   <% current_book.recipes.each do |recipe| %>
       <tr>
         <% if current_book.present? %>
@@ -31,6 +32,7 @@
                   book_recipe_cookbook_entries_path(current_book, recipe),
                   class: "btn btn-primary" %>
             <% end %>
+
           </td>
         <% end %>
         <td><%= link_to recipe.name, recipe %></td>
@@ -38,6 +40,7 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
 
 <div class="actions">
     <%= f.submit nil, class: "btn btn-primary" %>
