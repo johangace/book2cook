@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: [:show]
   resources :recipes, except: [:index]
+  resource :search, only: [:show]
   resources :books do
     resource :cover, only: [:update, :show]
     resources :recipes, only: [:index] do
