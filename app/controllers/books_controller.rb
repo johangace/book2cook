@@ -11,7 +11,7 @@ class BooksController < ApplicationController
 
   def edit
     # This is a HACK: don't move this without talking to andy
-    @book.cover.cover_pdf
+    @book.cover.cover_pdf if @book.cover.image.attached?
   end
 
   def create
