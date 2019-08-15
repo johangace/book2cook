@@ -10,6 +10,8 @@ class BooksController < ApplicationController
   end
 
   def edit
+    # This is a HACK: don't move this without talking to andy
+    @book.cover.cover_pdf
   end
 
   def create
@@ -71,6 +73,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:name)
+    params.require(:book).permit(:name, :subtitle, :dedication, :footer, :image)
   end
 end
