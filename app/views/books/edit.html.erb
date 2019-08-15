@@ -1,1 +1,3 @@
-<%= render 'form' %>
+<%= image_tag @book.cover.cover_url %>
+<%= render 'covers/form', cover: @book.cover %>
+<%= render 'form', book: @book %>

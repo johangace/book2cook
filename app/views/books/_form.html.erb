@@ -1,4 +1,4 @@
-<%= form_with model: @book, local: true do |f| %>  
+<%= form_with model: book, local: true do |f| %>  
   <div class="form-group">
     <%= f.label :name, autocomplete: "off" %>
     <%= f.text_field :name, class: "form-control" %>
@@ -15,10 +15,10 @@
     <%= f.text_field :footer, class: "form-control" %>
   </div>
   <div class="actions">
-  <%= f.submit nil, class: "btn btn-primary" %>
-  <%= link_to 'Back', @book, class: "btn btn-secondary" %>
-</div>
-    <% end %>
+    <%= f.submit nil, class: "btn btn-primary" %>
+    <%= link_to 'Back', book, class: "btn btn-secondary" %>
+  </div>
+<% end %>
   
 
  

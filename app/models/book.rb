@@ -1,15 +1,18 @@
 class Book < ApplicationRecord
   belongs_to :user
-  has_many :cookbook_entries
+  has_many :cookbook_entries, dependent: :destroy
   has_many :recipes, through: :cookbook_entries
-  has_one :cover
+  has_one :cover, dependent: :destroy
 
   has_one_attached :interior_pdf
 
   validates :name, :subtitle, :dedication, :footer ,presence: true
- 
 
   after_save :make_pdf, if: :changed?
+
+  def cover
+    super || create_cover
+  end
 
   def make_pdf
     Prawn::Document.generate(
@@ -52,5 +55,22 @@ class Book < ApplicationRecord
       pdf.number_pages " <page> ", options
     end
     self.interior_pdf.attach(io: File.open(Rails.root.join('tmp', "cookbook#{id}.pdf")), filename: 'interior.pdf')
+  end
+
+  def cover_pdf
+    Prawn::Document.generate(
+    "tmp/cover#{id}.pdf",
+      page_size: [891.36, 666],
+      page_layout: :landscape
+    ) do |pdf|
+      pdf.image StringIO.open(cover.image.download), width: 560, at: [0, 560], align: :center
+      pdf.move_down 250
+      pdf.font "Times-Roman", style: :bold
+      pdf.font_size(40) { pdf.text name, align: :center }
+      pdf.move_down 10
+      pdf.font "Helvetica", style: :italic
+      pdf.font_size(20) { pdf.text subtitle, align: :center}
+    end
+    cover.pdf.attach(io: File.open(Rails.root.join('tmp', "cover#{id}.pdf")), filename: 'cover.pdf')
   end
 end
