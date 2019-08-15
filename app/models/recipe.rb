@@ -1,4 +1,5 @@
 class Recipe < ApplicationRecord
+  include Search
   belongs_to :user
   has_many :cookbook_entries
   has_many :books,  through: :cookbook_entries
@@ -9,6 +10,7 @@ class Recipe < ApplicationRecord
     :instructions, 
     presence: true,
     length: { minimum: 5 }
+
 
   def image_url(size="200x200")
     if image.attached?
