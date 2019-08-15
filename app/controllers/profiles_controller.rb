@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
   private
 
   def set_profile
-    @profile = current_user.profile
+    @profile = Profile.find(params[:id])
   end
 
   def verify_profile_ownership
