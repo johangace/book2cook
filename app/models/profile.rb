@@ -7,7 +7,6 @@ class Profile < ApplicationRecord
   validates :zipcode, presence: true, length: {is: 5}, format: { with: /\d\d\d\d\d/ }, on: :update
   validates :street, :city, presence: true, on: :update
   
-
   def avatar_url(size="400x400")
     if avatar.attached?
       avatar.variant(resize: size)
