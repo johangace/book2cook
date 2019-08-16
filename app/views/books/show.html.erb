@@ -5,7 +5,14 @@
 
 <div id="container" class="book-pdf-container"></div>
 
-<button class="btn btn-success">Buy now! ($<%= @price %>)</button>
+<% if current_user.profile.street && @book.recipes.count >= 15 && @book.cover.pdf.attached? %>
+  <button class="btn btn-success">Buy now! ($<%= @price %>)</button>
+<% elsif current_user.profile.street %>
+  <%= link_to "You must add a cover and a minimum of 15 recipes before you can purchase this book", edit_book_path(@book), class: "btn btn-secondary" %>
+<% else %>
+  <%= link_to "Update your address to purchase this book", edit_profile_path, class: "btn btn-secondary" %>
+<% end %>
+
 
 <script>
 $(document).on("turbolinks:load", function(){
