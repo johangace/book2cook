@@ -12,6 +12,7 @@ class BooksController < ApplicationController
   def edit
     # This is a HACK: don't move this without talking to andy
     @book.cover.cover_pdf if @book.cover.image.attached?
+    session[:book_id] = @book.id
   end
 
   def create
