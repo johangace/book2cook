@@ -5,6 +5,7 @@ class Recipe < ApplicationRecord
   has_many :books,  through: :cookbook_entries
 
   has_one_attached :image 
+  validates :image,   presence: true
   validates :name, 
     :ingredients, 
     :instructions, 

@@ -28,7 +28,7 @@ class Cover < ApplicationRecord
 
       pdf.font "Helvetica", style: :italic
       pdf.font_size(12) {  pdf.text_box book.footer, at: [500, 600], align: :left}
-      pdf.text "end", at: [770, 20]
+      pdf.text_box "end", at: [770, 20]
     end
     self.pdf.attach(io: File.open(Rails.root.join('tmp', "cover#{id}.pdf")), filename: 'cover.pdf')
   end
