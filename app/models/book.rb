@@ -40,11 +40,6 @@ class Book < ApplicationRecord
         pdf.start_new_page
         pdf.image StringIO.open(recipe.image.download), fit: [377, 460], position: :center, vposition: :center
         pdf.start_new_page
-        pdf.start_new_page
-        pdf.move_down 200
-      pdf.font "Helvetica", style: :italic
-      pdf.font_size(17) { pdf.text footer, align: :center}
-      
       end
       options = {
         align: :center,
@@ -57,20 +52,5 @@ class Book < ApplicationRecord
     self.interior_pdf.attach(io: File.open(Rails.root.join('tmp', "cookbook#{id}.pdf")), filename: 'interior.pdf')
   end
 
-  def cover_pdf
-    Prawn::Document.generate(
-    "tmp/cover#{id}.pdf",
-      page_size: [891.36, 666],
-      page_layout: :landscape
-    ) do |pdf|
-      pdf.image StringIO.open(cover.image.download), width: 560, at: [0, 560], align: :center
-      pdf.move_down 250
-      pdf.font "Times-Roman", style: :bold
-      pdf.font_size(40) { pdf.text name, align: :center }
-      pdf.move_down 10
-      pdf.font "Helvetica", style: :italic
-      pdf.font_size(20) { pdf.text subtitle, align: :center}
-    end
-    cover.pdf.attach(io: File.open(Rails.root.join('tmp', "cover#{id}.pdf")), filename: 'cover.pdf')
-  end
+
 end
