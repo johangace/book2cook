@@ -1,7 +1,9 @@
 <%= form_with model: [cover.book, cover],  local: true do |form| %>
   <%= form.label :image %><br>
-  <%= form.label :image, class: "imageIcon" do %>
-    <%= form.file_field :image, hidden: true %>
+  <%= form.label :image do %>
+    <%= form.file_field :image, hidden: false %>
   <% end %>
   <%= form.submit "Update Cover", class: "btn btn-primary" %>
 <% end %>
+
+
