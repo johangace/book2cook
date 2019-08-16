@@ -7,8 +7,11 @@
   <% @books.each do |book| %>
     <div class= "bookItems">
       <img src="/book.png" class="bookImage"alt="">
-      <p><%= link_to  book.name, book %></p>
-      <%= link_to 'Edit', edit_book_path(book), class: "btn btn-secondary" %>
+      <p><%= link_to  book.name, edit_book_path(book)  %></p>
+            <% if book.recipes.count >0 %>
+            <%= link_to 'View Book', book, class: "btn btn-primary" %>
+            <% end %>
+          
       <%= link_to 'Delete',
         book,
         method: :delete,
