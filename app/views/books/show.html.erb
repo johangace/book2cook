@@ -1,12 +1,35 @@
-<div class="text-center"><%= link_to "View Cover", book_cover_path(@book), class: "btn btn-secondary", target: "_blank" %> <%= link_to 'Edit Book Mode', edit_book_path(@book), class: "btn btn-secondary" %>  </div>
 
-
-
+<div class="text-center">
+  <% if @book.cover.pdf.attached? %>
+    <%= link_to "View Cover", book_cover_path(@book), class: "btn btn-secondary", target: "_blank" %>
+  <% end %>
+  <%= link_to 'Edit Book Mode', edit_book_path(@book), class: "btn btn-secondary" %>
+</div>
 
 <div id="container" class="book-pdf-container"></div>
 
 <% if current_user.profile.street && @book.recipes.count >= 15 && @book.cover.pdf.attached? %>
-  <button class="btn btn-success">Buy now! ($<%= @price %>)</button>
+  <div>
+    Subtotal: $<%= @price['line_item_costs'].map{|line| line['total_cost_excl_tax']}.sum %> <%= @price['currency'] %>
+  </div>
+  <div>
+    Tax: $<%= @price['line_item_costs'].map{|line| line['total_tax']}.sum %> <%= @price['currency'] %>
+  </div>
+  <div>
+    Shipping: $<%= @price['shipping_cost']['total_cost_incl_tax'] %> <%= @price['currency'] %>
+  </div>
+  <div>
+    Total: $<%= @price['total_cost_incl_tax'] %> <%= @price['currency'] %>
+  </div>
+  <%= react_component 'BuyButton',
+      props: {
+        price: @price['total_cost_incl_tax'].to_f * 100,
+        email: current_user.email,
+        description: @book.name,
+        name: "A Taste of Home",
+        image: url_for(@book.cover.image),
+        book_id: @book.id
+      } %>
 <% elsif current_user.profile.street %>
   <%= link_to "You must add a cover and a minimum of 15 recipes before you can purchase this book", edit_book_path(@book), class: "btn btn-secondary" %>
 <% else %>

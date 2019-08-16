@@ -41,8 +41,7 @@ class BooksController < ApplicationController
         "line_items" => [{
           "pod_package_id" => "0600X0900BWSTDPB060UW444MXX",
           "quantity" => 1,
-          # "page_count" => @book.recipes.count * 2 + 2
-          "page_count": 32
+          "page_count": @book.recipes.count * 2 + 2
         }],
         "shipping_address" => {
         "city" => @book.user.profile.city,
@@ -58,7 +57,7 @@ class BooksController < ApplicationController
         "Authorization" => "Bearer #{Lulu.token}"
       }
     )
-    @price = JSON.parse(response.body)["total_cost_incl_tax"]
+    @price = JSON.parse(response.body)
   end
 
   def destroy
