@@ -1,17 +1,18 @@
 <h1>Welcome</h1>
-<h3>Your Cookbooks:</h3>
+<h2>Your Cookbooks:</h2>
 <div class="dashboardBooks">
-  <img src="/book.png" class="dashboardBookImage"alt="bookpic">
-  
+   <div class="dashboardBookImage">
+      <img src="/book.png" class="dashboardBookImage"alt="bookpic">
+  </div>
 <br>
-<h3>Recently Added Recipes:</h3>
+<h1>Recently Added Recipes:</h1>
     <% @recipes.each do |recipe| %>
       <div class="dashboardRecipe" >
-      <td><%= link_to recipe.name, recipe %></td>
+      <h1 class=“text-center”><%= recipe.user.profile.name %>’s Recipe:</h1><td><%=  link_to recipe.name, recipe %></td>
       <br>
-     
+     <div class= "dashboardRecipeImage">
         <img src="/background.png" class="dashboardRecipeImage"alt="foodpic">
-  
+    </div>
       <% if current_book.present? %>
             <% if current_book.recipes.include?(recipe) %>
               <%= button_to "Remove from #{current_book.name}",

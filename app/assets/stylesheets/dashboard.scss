@@ -1,15 +1,22 @@
 .dashboardRecipe{
   text-align: center;
   font-size: 3rem;
+  background: #D4B38b;
   // padding: 30px;
   // margin: 40px;
   
+}
+.dashboardBookImage{
+  height: 20rem;
+  width: 20rem;
+ 
 }
 .addRemoveButtons{
   height: 500px;
 }
 .dashboardRecipeImage{
-  size: 30px;
-
+  display: inline-block;
+  height:20rem;
+  width: 20rem;
 }
 
