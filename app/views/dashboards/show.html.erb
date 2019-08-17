@@ -1,11 +1,18 @@
 <h1>Welcome</h1>
-<h3>Recently Added Recipes</h3>
-
-
-    <div class="individualRecipe" >
+<h3>Your Cookbooks:</h3>
+<div class="dashboardBooks">
+  <img src="/book.png" class="dashboardBookImage"alt="bookpic">
+  
+<br>
+<h3>Recently Added Recipes:</h3>
     <% @recipes.each do |recipe| %>
+      <div class="dashboardRecipe" >
       <td><%= link_to recipe.name, recipe %></td>
-        <% if current_book.present? %>
+      <br>
+     
+        <img src="/background.png" class="dashboardRecipeImage"alt="foodpic">
+  
+      <% if current_book.present? %>
             <% if current_book.recipes.include?(recipe) %>
               <%= button_to "Remove from #{current_book.name}",
                   book_recipe_cookbook_entries_path(current_book, recipe),
@@ -16,6 +23,7 @@
                   book_recipe_cookbook_entries_path(current_book, recipe),
                   class: "btn btn-primary" %>
             <% end %>
+          <br>
         <% end %>
     <% end %>
     </div>

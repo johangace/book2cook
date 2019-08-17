@@ -1,10 +1,15 @@
-.individualRecipe{
+.dashboardRecipe{
   text-align: center;
-  display: grid;
-  padding: 30px;
-  margin: 40px;
+  font-size: 3rem;
+  // padding: 30px;
+  // margin: 40px;
+  
 }
 .addRemoveButtons{
   height: 500px;
+}
+.dashboardRecipeImage{
+  size: 30px;
+
 }
 
