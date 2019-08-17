@@ -1,14 +1,23 @@
+<div class="dashboardBody">
 <h1>Welcome</h1>
 <h2>Your Cookbooks:</h2>
 <div class="dashboardBooks">
    <div class="dashboardBookImage">
       <img src="/book.png" class="dashboardBookImage"alt="bookpic">
   </div>
+    
 <br>
 <h1>Recently Added Recipes:</h1>
     <% @recipes.each do |recipe| %>
-      <div class="dashboardRecipe" >
-      <h1 class=“text-center”><%= recipe.user.profile.name %>’s Recipe:</h1><td><%=  link_to recipe.name, recipe %></td>
+      <div class="dashboardRecipe">
+      <div class="dashboardRecipeUserInfo">
+        <div class="dashboardUserPic">
+         <%= image_tag recipe.user.profile.avatar_url("200x200"), width: 50 %>
+        </div>
+        <div class="dashboardUserName">
+          <h1 class=“text-center”><%= recipe.user.profile.name %>’s Recipe:</h1><td><%=  link_to recipe.name, recipe %></td>
+        </div>
+      </div>
       <br>
      <div class= "dashboardRecipeImage">
         <img src="/background.png" class="dashboardRecipeImage"alt="foodpic">
@@ -27,5 +36,4 @@
           <br>
         <% end %>
     <% end %>
-    </div>
-
+</div>

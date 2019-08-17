@@ -1,7 +1,11 @@
+.dashboardBody{
+  font-family: 'Judson', serif;
+  // background: whitesmoke
+}
 .dashboardRecipe{
   text-align: center;
   font-size: 3rem;
-  background: #D4B38b;
+  font-family: 'Judson', serif;
   // padding: 30px;
   // margin: 40px;
   
@@ -18,5 +22,17 @@
   display: inline-block;
   height:20rem;
   width: 20rem;
+}
+
+.dashboardRecipeUserInfo{
+  display: flex;
+  align-items: inline;
+}
+
+.dashboardUserPic{
+  margin: 25px;
+}
+.dashboardUserName{
+  margin: 25px;
 }
 
