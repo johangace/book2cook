@@ -9,6 +9,7 @@
 <br>
 <h1>Recently Added Recipes:</h1>
     <% @recipes.each do |recipe| %>
+      <hr>
       <div class="dashboardRecipe">
       <div class="dashboardRecipeUserInfo">
         <div class="dashboardUserPic">
@@ -32,6 +33,7 @@
               <%= button_to "Add to #{current_book.name}",
                   book_recipe_cookbook_entries_path(current_book, recipe),
                   class: "btn btn-primary" %>
+              <hr>
             <% end %>
           <br>
         <% end %>
