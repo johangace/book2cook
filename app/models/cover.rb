@@ -7,8 +7,7 @@ class Cover < ApplicationRecord
   def cover_url(size="200x200")
     if image.attached?
       image.variant(resize: size)
-    else
-      '/images/frame1.jpeg'
+    
     end
   end
 

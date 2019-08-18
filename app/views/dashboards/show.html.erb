@@ -4,6 +4,7 @@
 <table class="table">
   <tbody>
     <% @recipes.each do |recipe| %>
+
       <tr>
         <% if current_book.present? %>
           <td>
@@ -19,6 +20,7 @@
             <% end %>
           </td>
         <% end %>
+        <h1 class="text-center"><%= recipe.user.profile.name %>'s Recipes</h1>
         <td><%= link_to recipe.name, recipe %></td>
       </tr>
     <% end %>

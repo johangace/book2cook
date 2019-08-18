@@ -19,7 +19,13 @@
 <% end %>
 
 <% if @book == current_book %>
-  <h2>Add/Remove Recipes</h2>
+<% if current_book.recipes.any? %>
+<h2>Add/Remove Recipes</h2>
+ <% else %>
+ <h2> You don't have any recipes added to your book. Please add recipes.  </h2>
+ <%end%>
+
+
   <table class="table">
     <tbody>
       <% current_book.recipes.each do |recipe| %>
@@ -39,6 +45,7 @@
           <td><%= link_to recipe.name, recipe %></td>
         </tr>
       <% end %>
+     
     </tbody>
   </table>
 <% end %>
