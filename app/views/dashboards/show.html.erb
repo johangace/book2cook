@@ -12,11 +12,11 @@
               <%= button_to "Remove from #{current_book.name}",
                   book_recipe_cookbook_entries_path(current_book, recipe),
                   method: :delete,
-                  class: "btn btn-danger" %>
+                  class: "orangeButton" %>
             <% else %>
               <%= button_to "Add to #{current_book.name}",
                   book_recipe_cookbook_entries_path(current_book, recipe),
-                  class: "btn btn-primary" %>
+                  class: "greenButton" %>
             <% end %>
           </td>
         <% end %>

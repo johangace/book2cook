@@ -1,32 +1,41 @@
+
+<div class="container">
+<div class="margin10">
 <%= form_with model: book, local: true do |f| %>
   <div class="form-group">
-    <%= f.label :name, autocomplete: "off" %>
+    <%= f.label :title, autocomplete: "off", class: "bookName"  %>
     <%= f.text_field :name, class: "form-control" %>
-
-    <%= f.label :subtitle %>
-    <%= f.text_field :subtitle, class: "form-control" %>
-
-    <%= f.label :dedication %>
-    <%= f.text_field :dedication, class: "form-control" %>
-
-    <%= f.label :footer %>
-    <%= f.text_field :footer, class: "form-control" %>
+    <br>
+    <%= f.label :subtitle, class: "bookName" %>
+    <%= f.text_field :subtitle , class: "form-control" %>
+    <br>
+    <%= f.label :dedication , class: "bookName"%>
+    <%= f.text_field :dedication, class: "form-control textBox"%>
+    <br>
+    <%= f.label :footer , class: "bookName"%>
+    <%= f.text_field :footer, class: "form-control textBox" %>
   </div>
   <div class="actions">
-    <%= f.submit nil , class: "btn btn-primary" %>
-    <%= link_to 'Back', book, class: "btn btn-secondary" %>
+    <%= f.submit nil , class: "greenButton" %>
+    <%= link_to 'Back', book, class: "orangeButton" %>
   </div>
 <% end %>
+</span>
 
+</div>
+
+<div class="actions bookTitle"> 
 <% if @book == current_book %>
 <% if current_book.recipes.any? %>
 <h2>Add/Remove Recipes</h2>
  <% else %>
  <h2> You don't have any recipes added to your book. Please add recipes.  </h2>
  <%end%>
+</div>
 
 
   <table class="table">
+  
     <tbody>
       <% current_book.recipes.each do |recipe| %>
         <tr>
@@ -35,17 +44,20 @@
               <%= button_to "Remove from #{current_book.name}",
                   book_recipe_cookbook_entries_path(current_book, recipe),
                   method: :delete,
-                  class: "btn btn-danger" %>
+                  class: "orangeButton" %>
             <% else %>
               <%= button_to "Add to #{current_book.name}",
                   book_recipe_cookbook_entries_path(current_book, recipe),
-                  class: "btn btn-primary" %>
+                  class: "greenButton" %>
             <% end %>
           </td>
-          <td><%= link_to recipe.name, recipe %></td>
+          <td><%= link_to recipe.name, recipe,  class: "bookName" %></td>
         </tr>
       <% end %>
      
     </tbody>
   </table>
 <% end %>
+
+
+<div>
