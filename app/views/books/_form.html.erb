@@ -1,6 +1,6 @@
 
 <div class="container">
-<div class="margin10">
+
 <%= form_with model: book, local: true do |f| %>
   <div class="form-group">
     <%= f.label :title, autocomplete: "off", class: "bookName"  %>
@@ -23,6 +23,7 @@
 </span>
 
 </div>
+<div class="margin10 container"">
 
 <div class="actions bookTitle"> 
 <% if @book == current_book %>
@@ -60,4 +61,5 @@
 <% end %>
 
 
+<div>
 <div>
