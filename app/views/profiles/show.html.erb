@@ -1,12 +1,12 @@
 <div class="profile-content">
   <h1>Profile</h1>
   <%= image_tag @profile.avatar_url %>
-  <h2>Name: <%= @profile.name %> </h2>
+  <h3>Name: <%= @profile.name %> </h2>
   <h3>Address:</h3>
   <p><%= @profile.street %></p>
   <p><%= @profile.city %> <%= @profile.state %> <%= @profile.zipcode %></p>
   <h3>Phone:</h3>
   <p><%= @profile.phone_number %></p>
-  <%= link_to "Edit Profile", edit_profile_path(current_user.profile),  class: "btn btn-secondary" %>
+  <%= link_to "Edit Profile", edit_profile_path(current_user.profile),  class: "greenButton" %>
 </div>
 
