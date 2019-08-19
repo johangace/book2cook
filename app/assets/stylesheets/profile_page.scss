@@ -5,7 +5,29 @@
 .profile-content{
   display:grid;
   justify-content: center;
-  background-color: grey;
+  background-color: white;
   padding:50px;
   margin:50px;
+
+  h1{
+    margin:auto;
+    color: black;
+  }
+
+  h2{
+    padding:20px;
+    color: black;
+  }
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  margin:20px;
+}
+
+.profile-content h3{
+  margin:15px;
+}
+
+.profile-content h1{
+  margin:15px;
 }

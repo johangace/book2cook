@@ -1,28 +1,30 @@
-<h1>Welcome</h1>
-<h3>Recently Added Recipes</h3>
-
-<table class="table">
-  <tbody>
-    <% @recipes.each do |recipe| %>
-
-      <tr>
-        <% if current_book.present? %>
-          <td>
-            <% if current_book.recipes.include?(recipe) %>
-              <%= button_to "Remove from #{current_book.name}",
-                  book_recipe_cookbook_entries_path(current_book, recipe),
-                  method: :delete,
-                  class: "orangeButton" %>
-            <% else %>
-              <%= button_to "Add to #{current_book.name}",
-                  book_recipe_cookbook_entries_path(current_book, recipe),
-                  class: "greenButton" %>
-            <% end %>
-          </td>
-        <% end %>
-        <h1 class="text-center"><%= recipe.user.profile.name %>'s Recipes</h1>
-        <td><%= link_to recipe.name, recipe %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <h1 class="text-center">Welcome!</h1>
+  <h3 class="text-center">Recently Added Recipes</h3>
+  <table bgcolor="#ffffff" class="table dash-table">
+    <tbody>
+      <% @recipes.each do |recipe| %>
+        <tr>
+        <td><%= image_tag recipe.user.profile.avatar_url("200x200"), width: 50 %></td>
+        <td><%= recipe.user.profile.name %><td>
+        <td><%= link_to recipe.name, recipe, class: "bookName" %></td>
+        <td><%= image_tag recipe.image_url, width: 250, height:250, style: "object-fit: cover;" %></td>
+          <% if current_book.present? %>
+            <td>
+              <% if current_book.recipes.include?(recipe) %>
+                <%= button_to "Remove from #{current_book.name}",
+                    book_recipe_cookbook_entries_path(current_book, recipe),
+                    method: :delete,
+                    class: "orangeButtonDash" %>
+              <% else %>
+                <%= button_to "Add to #{current_book.name}",
+                    book_recipe_cookbook_entries_path(current_book, recipe),
+                    class: "greenButtonDash" %>
+              <% end %>
+              </tr>
+            </td>
+          <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

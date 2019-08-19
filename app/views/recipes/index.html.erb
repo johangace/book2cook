@@ -5,15 +5,29 @@
   <h1 ><%= @user.profile.name %>'s Recipes</h1>
 </div>
 
-<div class="container ">
+<div class="container">
 
 <div class=" newRecipe text-center mb-2 ">
   <%= link_to 'New Recipe', new_recipe_path, class: "newRecipeButton" %>
 </div>
-<table class="table">
+<table class="table dash-table">
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
+        <td>
+          <% if recipe.user == current_user %>
+              <div class="btn-group">
+                <%= link_to 'Edit', edit_recipe_path(recipe), class: "greenButton" %>
+                <%= link_to 'Delete',
+                    recipe,
+                    method: :delete,
+                    data: {confirm: 'Are you sure?' },
+                    class: "orangeButton" %>
+              </div>
+          <% end %>
+        </td>
+        <td><%= link_to recipe.name, recipe ,  class: "bookName" %></td>
+        <td><%= image_tag recipe.image_url, width: 250, height: 250, style: "object-fit: cover;" %><td>
         <% if current_book.present? %>
           <td>
             <% if current_book.recipes.include?(recipe) %>
@@ -28,21 +42,6 @@
             <% end %>
           </td>
         <% end %>
-        <td><%= link_to recipe.name, recipe ,  class: "bookName" %></td>
-        
-        
-        <td> <%= image_tag recipe.image_url %> <td>
-          <% if recipe.user == current_user %>
-              <div class="btn-group float-right">
-                <%= link_to 'Edit', edit_recipe_path(recipe), class: "greenButton" %>
-                <%= link_to 'Delete',
-                    recipe,
-                    method: :delete,
-                    data: {confirm: 'Are you sure?' },
-                    class: "orangeButton" %>
-              </div>
-          <% end %>
-        </td>
       </tr>
     <% end %>
   </tbody>

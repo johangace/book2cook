@@ -1,0 +1,46 @@
+
+.bookName {
+  color: #C8502A;
+  font-size: 2rem;
+}
+
+.bookName:hover {
+  color:#97B787;
+  font-size: 2rm;
+  text-decoration: none;
+}
+.orangeButtonDash{
+  height: 3rem;
+  width: 15rem;
+  font-size: 15px;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 10px;
+  transition: all 0.4s ease 0s;
+  background-color: #C8502A;
+  color: white;
+  text-align: center;
+  border-color: transparent;
+ }
+
+ .greenButtonDash{
+  height: 3rem;
+  width: 15rem;
+  font-size: 15px;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 10px;
+  transition: all 0.4s ease 0s;
+  background-color: #97B787;
+  color: white;
+  text-align: center;
+  border-color: transparent;
+ }
+
+ .dash-table td {
+   vertical-align: middle;
+ }

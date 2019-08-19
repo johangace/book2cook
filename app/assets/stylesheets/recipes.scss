@@ -1,6 +1,4 @@
 .recipeContent{
-  height:60vh;
-  width: 50vw;
   border: 2px solid black;
   background:white;
   border-radius: 1px;
@@ -67,28 +65,34 @@ label{
   font-size:20px;
 }
 
-.createButton{
-  height:40px;
-  width:150px;
+.orangeButtonNewRec{
+  margin-bottom: 8%;
   color: #494949;
   text-transform: uppercase;
   text-decoration: none;
   background: #ffffff;
+  padding: 10px;
   display: inline-block;
   transition: all 0.4s ease 0s;
   background-color: #C8502A;
   color: white;
   text-align: center;
   border-color: transparent;
-}
-
-.createButton:hover {
-  color: #ffffff;
-  background: #f6b93b;
-  border-color: #f6b93b;
+ }
+ .greenButtonNewRec{
+  margin-bottom: 8%;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 10px;
+  display: inline-block;
   transition: all 0.4s ease 0s;
-  }
-
+  background-color: #97B787;
+  color: white;
+  text-align: center;
+  border-color: transparent;
+ }
 .actions{
   text-align: center;
 }

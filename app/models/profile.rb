@@ -12,7 +12,7 @@ class Profile < ApplicationRecord
     if avatar.attached?
       avatar.variant(resize: size)
     else
-      '/dummy-profile.jpg'
+      '/profile.jpeg'
     end
   end
 end
