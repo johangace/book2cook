@@ -1,34 +1,13 @@
 
-.dashboardRecipe{
-  height: 24rem;
-  display: flex;
-  text-align: center;
-  font-size: 3rem;
-  font-family: 'Judson', serif;
-  background-color:white;
-}
-.dashboardBookImage{
-  height: 20rem;
-  width: 20rem;
-}
-.addRemoveButtons{
-  height: 500px;
-}
-.dashboardRecipeImage{
-  margin-top: 28px;
-  display: inline-block;
-  height:20rem;
-  width: 20rem;
-}
-.dashboardRecipeUserInfo{
-  display: inline-flex;
-}
-.dashboardUserPic{
-  margin: 25px;
-}
-.dashboardUserName{
-  margin: 25px;
-}
+.bookName {
+  color: #C8502A;
+  font-size: 2rem;
+  }
+.bookName:hover {
+    color:#97B787;
+    font-size: 2rm;
+    text-decoration: none;
+    }
 .orangeButtonDash{
   height: 3rem;
   width: 15rem;
@@ -64,3 +43,6 @@
   border-color: transparent;
  }
  
+ a:link{
+   color:black;
+ }
