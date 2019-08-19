@@ -1,6 +1,8 @@
 
 <% if @book.cover.cover_url.present? %>
-<%= image_tag @book.cover.cover_url %>
+  <div class="text-center container">
+    <%= image_tag @book.cover.cover_url %>
+  </div>
 <%end%>
 
 <%= render 'covers/form', cover: @book.cover %>
