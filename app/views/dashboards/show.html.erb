@@ -1,13 +1,13 @@
 <h1 class="text-center">Welcome!</h1>
 <h3>Recently Added Recipes</h3>
-  <table bgcolor="#ffffff" class="table container">
+  <table bgcolor="#ffffff" class="table dash-table">
     <tbody>
       <% @recipes.each do |recipe| %>
         <tr>
         <td><%= image_tag recipe.user.profile.avatar_url("200x200"), width: 50 %></td>
-        <td> <h1 class="text-center"><%= recipe.user.profile.name %>'s Recipes</h1><td>
-        <td> <h1 class="text-center"><%= link_to recipe.name, recipe, class: "bookName" %></td>
-        <td><%= image_tag recipe.image_url, width: 250, height:250 %></td>
+        <td><%= recipe.user.profile.name %><td>
+        <td><%= link_to recipe.name, recipe, class: "bookName" %></td>
+        <td><%= image_tag recipe.image_url, width: 250, height:250, style: "object-fit: cover;" %></td>
           <% if current_book.present? %>
             <td>
               <% if current_book.recipes.include?(recipe) %>
