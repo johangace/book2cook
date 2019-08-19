@@ -1,6 +1,8 @@
 body{
-  font-family: 'Helvetica', serif;
-  background-color: white;
+  font-family: 'Playfair Display', serif;
+  background-image: url(/texture.jpg);
+  background-size: cover;
+
 }
 
 li{
