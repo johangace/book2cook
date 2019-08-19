@@ -1,10 +1,11 @@
-.dashboardBody{
-  font-family: 'Judson', serif;
-}
+
 .dashboardRecipe{
+  height: 24rem;
+  display: flex;
   text-align: center;
   font-size: 3rem;
   font-family: 'Judson', serif;
+  background-color:white;
 }
 .dashboardBookImage{
   height: 20rem;
@@ -14,13 +15,13 @@
   height: 500px;
 }
 .dashboardRecipeImage{
+  margin-top: 28px;
   display: inline-block;
   height:20rem;
   width: 20rem;
 }
 .dashboardRecipeUserInfo{
-  display: flex;
-  align-items: inline;
+  display: inline-flex;
 }
 .dashboardUserPic{
   margin: 25px;
@@ -28,4 +29,38 @@
 .dashboardUserName{
   margin: 25px;
 }
-
+.orangeButtonDash{
+  height: 3rem;
+  width: 15rem;
+  font-size: 15px;
+  margin-top: 9rem;
+  margin-bottom: 8%;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 10px;
+  transition: all 0.4s ease 0s;
+  background-color: #C8502A;
+  color: white;
+  text-align: center;
+  border-color: transparent;
+ }
+ .greenButtonDash{
+  height: 3rem;
+  width: 15rem;
+  font-size: 15px;
+  margin-bottom: 8%;
+  margin-top: 9rem;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 10px;
+  transition: all 0.4s ease 0s;
+  background-color: #97B787;
+  color: white;
+  text-align: center;
+  border-color: transparent;
+ }
+ 

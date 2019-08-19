@@ -1,41 +1,35 @@
 <div class="dashboardBody">
-<h1>Welcome</h1>
-<h2>Your Cookbooks:</h2>
-<div class="dashboardBooks">
-   <div class="dashboardBookImage">
-      <img src="/book.png" class="dashboardBookImage"alt="bookpic">
-  </div>
-    
-<br>
-<h1>Recently Added Recipes:</h1>
-    <% @recipes.each do |recipe| %>
-      <hr>
-      <div class="dashboardRecipe">
-      <div class="dashboardRecipeUserInfo">
-        <div class="dashboardUserPic">
-         <%= image_tag recipe.user.profile.avatar_url("200x200"), width: 50 %>
-        </div>
-        <div class="dashboardUserName">
-          <h1 class=“text-center”><%= recipe.user.profile.name %>’s Recipe:</h1><td><%=  link_to recipe.name, recipe %></td>
-        </div>
-      </div>
+    <h1 class="text-center mb-2">Welcome!</h1>
       <br>
-     <div class= "dashboardRecipeImage">
-        <img src="/background.png" class="dashboardRecipeImage"alt="foodpic">
-    </div>
-      <% if current_book.present? %>
-            <% if current_book.recipes.include?(recipe) %>
-              <%= button_to "Remove from #{current_book.name}",
-                  book_recipe_cookbook_entries_path(current_book, recipe),
-                  method: :delete,
-                  class: "btn btn-danger" %>
-            <% else %>
-              <%= button_to "Add to #{current_book.name}",
-                  book_recipe_cookbook_entries_path(current_book, recipe),
-                  class: "btn btn-primary" %>
-              <hr>
-            <% end %>
+       <h2>Recently Added Recipes:</h2>
+        <% @recipes.each do |recipe| %>
+      <div class="dashboardRecipe">
+          <div class="dashboardRecipeUserInfo">
+             <div class="dashboardUserPic">
+                <%= image_tag recipe.user.profile.avatar_url("200x200"), width: 50 %>
+              </div>
+              <div class="dashboardUserName">
+                <h1 class=“text-center”><%= recipe.user.profile.name %>’s Recipe:</h1><td><%=  link_to recipe.name, recipe %></td>
+              </div>
+              <% if current_book.present? %>
+              <% if current_book.recipes.include?(recipe) %>
+                <%= button_to "Remove from #{current_book.name}",
+                    book_recipe_cookbook_entries_path(current_book, recipe),
+                    class: "orangeButtonDash" %>
+              <% else %>
+                <%= button_to "Add to #{current_book.name}",
+                    book_recipe_cookbook_entries_path(current_book, recipe),
+                    class: "greenButtonDash" %>
+              <% end %>
+            </div>
+            <br>
+          <div class= "dashboardRecipeImage">
+                <%= image_tag recipe.image_url, width: 261 %>
+          </div>
+      </div>
           <br>
         <% end %>
-    <% end %>
+      <% end %>
 </div>
+
+
