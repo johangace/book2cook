@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_10_183211) do
+ActiveRecord::Schema.define(version: 2019_08_15_193020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(version: 2019_08_10_183211) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.string "subtitle"
+    t.text "dedication"
+    t.text "footer"
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
@@ -53,8 +56,20 @@ ActiveRecord::Schema.define(version: 2019_08_10_183211) do
     t.index ["recipe_id"], name: "index_cookbook_entries_on_recipe_id"
   end
 
+  create_table "covers", force: :cascade do |t|
+    t.bigint "book_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_covers_on_book_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "name"
+    t.string "city"
+    t.string "phone_number"
+    t.integer "zipcode"
+    t.string "street"
+    t.string "state"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -89,6 +104,7 @@ ActiveRecord::Schema.define(version: 2019_08_10_183211) do
   add_foreign_key "books", "users"
   add_foreign_key "cookbook_entries", "books"
   add_foreign_key "cookbook_entries", "recipes"
+  add_foreign_key "covers", "books"
   add_foreign_key "profiles", "users"
   add_foreign_key "recipes", "users"
 end

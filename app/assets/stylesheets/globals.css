@@ -1,0 +1,17 @@
+body{
+  font-family: 'Playfair Display', serif;
+  background-image: url(/texture.jpg);
+  background-size: cover;
+}
+
+li{
+  list-style-type: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+
+
+

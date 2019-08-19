@@ -1,37 +1,175 @@
+.book-pdf-container {
+  height: 85vh;
+  width: 95%;
+  margin: 20px auto;
+  background-color: lightgray;
+}
+
+.fullscreen {
+  background-color: gray;
+}
+
+.bookName {
+color: #494949;
+font-size: 2rem;
+} 
+
+.bookName:hover {
+  color :black;
+  font-size: 2rm;
+  text-decoration: none;
+  } 
+
 .bookTitle{
+  margin-top: 6%;
   text-align: center;
+  color: #333;
+  font-size: 4rem;
 }
 
 .bookImage{
-  height:200px;
+  padding-top: 10%;
+  padding-bottom: 5%;
+  width: 200px;
+  height: auto;
+  
+  text-align: center;
 }
 
 .bookContainer{
   display: grid;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  padding:20px;
-  grid-template-columns: auto auto auto auto;
+  padding: 50px;
+  grid-template-columns: 33% 33% 33% ;
   text-align: center;
-  margin:10px;
+  height: 300px; 
 }
 
 .bookItems{
-  margin:10px;
-  background-color: grey;
+  margin:  15px;
+  border: 1px solid grey;
+  background-color: white;
 }
 
 .addBook{
-  color: white;
-  border: 1px solid grey;
-  font-size: 30px;
-  padding: 10px;
-  margin:5px;
-  border-radius: 90%;
-  background-color: grey;
+  color: black;
+  margin-top: 120px;
+  text-align: center;
+  font-size: 40px;
+  height: 200px;
 }
 
+.plus {
+  font-size: 200px !important;
+  color: grey;
+  text-decoration: none;
+  margin-top: 10%;
+
+}
+
+
+
+.addBook:hover{
+  color: grey;
+  text-decoration: none;
+}
+
+
+.orangeButton{
+  margin-bottom: 8%;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 10px;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  background-color: #C8502A;
+  color: white;
+  text-align: center;
+  border-color: transparent;
+}
+
+.greenButton{
+  margin-bottom: 8%;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 10px;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  background-color: #97B787;
+  color: white;
+  text-align: center;
+  border-color: transparent;
+}
+
+@media only screen and (max-width: 950px) {
+  
+  .bookName {
+    color: #494949;
+    font-size: 1rem;
+    } 
+  }
+
+@media only screen and (max-width: 850px) {
+  
 .addBook:hover{
   color:black;
   text-decoration: none;
+}
+
+.bookName {
+  color: #494949;
+  font-size: 13px;;
+  } 
+
+  .plus {
+    font-size: 100px !important;
+    color: grey;
+    text-decoration: none;
+  
+  }
+
+.orangeButton{
+ scale: .5;
+  position: relative;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  background-color: #C8502A;
+  color: white;
+  text-align: center;
+  border-color: transparent;
+}
+
+.greenButton{
+  scale: .5;
+  margin-bottom: 8%;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  background-color: #97B787;
+  color: white;
+  text-align: center;
+  border-color: transparent;
+}
+.bookImage{
+  padding-top: 10%;
+  padding-bottom: 5%;
+  width: 100px;
+  height: auto;
+  text-align: center;
+}
+.bookName:hover {
+  color:#494949;
+  font-size: 13px;
+  text-decoration: none;
+  } 
 }

@@ -1,19 +1,28 @@
 <h1 class="bookTitle">My Cookbooks</h1>
 
-<div class="text-center mb-2">
-  <%= link_to "+", new_book_path, class: "addBook" %>
-</div>
 <div class="bookContainer">
+<div class= "bookItems"> 
+ 
+  <%= link_to "+" ,  new_book_path,  class:"addBook plus" %>
+  
+</div>
   <% @books.each do |book| %>
     <div class= "bookItems">
-      <img src="/book.png" class="bookImage"alt="">
-      <p><%= link_to  book.name, book %></p>
-      <%= link_to 'Edit', edit_book_path(book), class: "btn btn-secondary" %>
-      <%= link_to 'Delete',
-        book,
-        method: :delete,
-        data: {confirm: 'Are you sure?'},
-        class: "btn btn-danger" %>
+      <img src="/cookb.png" class="bookImage"alt="">
+      <p><%= link_to book.name, edit_book_path(book), class: "bookName"  %></p>
+
+            <%= link_to 'Delete',
+                book,
+                method: :delete,
+                data: {confirm: 'Are you sure?'},
+                class: "  orangeButton" %>
+          
+            <% if book.recipes.count >0 %>
+            <%= link_to 'View Book', book, class: " greenButton" %>
+            <% end %>
+          
+      
     </div>
   <% end %>
 </div>
+

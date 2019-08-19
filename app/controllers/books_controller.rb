@@ -10,6 +10,9 @@ class BooksController < ApplicationController
   end
 
   def edit
+    # This is a HACK: don't move this without talking to andy
+    @book.cover.cover_pdf if @book.cover.image.attached?
+    session[:book_id] = @book.id
   end
 
   def create
@@ -33,7 +36,28 @@ class BooksController < ApplicationController
 
 
   def show
-    send_file "tmp/cookbook#{@book.id}.pdf", type: 'application/pdf', disposition: 'inline'
+    response = HTTParty.post(Lulu.base_url+'/print-job-cost-calculations/',
+      body: {
+        "line_items" => [{
+          "pod_package_id" => "0600X0900BWSTDPB060UW444MXX",
+          "quantity" => 1,
+          "page_count": @book.recipes.count * 2 + 2
+        }],
+        "shipping_address" => {
+        "city" => @book.user.profile.city,
+        "country_code" => "US",
+        "postcode" => @book.user.profile.zipcode,
+        "state_code" => @book.user.profile.state,
+        "street1" => @book.user.profile.street
+        },
+        "shipping_level" => "MAIL"
+      }.to_json,
+      headers: {
+        "Content-Type" => "application/json",
+        "Authorization" => "Bearer #{Lulu.token}"
+      }
+    )
+    @price = JSON.parse(response.body)
   end
 
   def destroy
@@ -49,6 +73,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:name)
+    params.require(:book).permit(:name, :subtitle, :dedication, :footer, :image)
   end
 end

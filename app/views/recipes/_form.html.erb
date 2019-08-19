@@ -1,3 +1,4 @@
+
 <div class="recipeContent">
   <%= form_with model: @recipe, local: true do |f| %>
     <div class="leftContent">
@@ -15,13 +16,13 @@
     </div>
     <div class="rightContent">
       <%= f.label :ingredients %>
-      <%= f.text_area :ingredients, class: "textBox" %>
+      <%= f.text_area :ingredients, class: "textBox", placeholder: "Place each ingredients in a new line" %>
       <%= f.label :instructions %>
       <%= f.text_area :instructions, class: "textBox" %>
     </div>
     <div class="actions">
-      <%= f.submit nil, class: "createButton" %>
-      <%= link_to 'Back', @recipe, class: "createButton" %>
+      <%= f.submit nil, class: "greenButtonNewRec" %>
+      <%= link_to 'Back', @recipe, class: "orangeButtonNewRec" %>
     </div>
   <% end %>
 </div>
