@@ -1,9 +1,16 @@
+<div class="container margin10">
+
+
 <%= form_with model: [cover.book, cover],  local: true do |form| %>
-  <%= form.label :image %><br>
-  <%= form.label :image do %>
-    <%= form.file_field :image, hidden: false %>
+  <%= form.label :cover , class: "bookName"%><br>
+  <%= form.label :image , class: "imageIcon"  do %>
+    <%= form.file_field :image, hidden: true %>
   <% end %>
-  <%= form.submit "Update Cover", class: "btn btn-primary" %>
+
+  <div class="margin10">
+  <%= form.submit "Update Cover", class: " greenButton " %>
 <% end %>
 
+</div>
 
+</div>

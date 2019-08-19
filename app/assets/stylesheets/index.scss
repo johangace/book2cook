@@ -31,6 +31,8 @@
   font-size:40;
   font-family: 'Judson', serif;
 }
+
+
 .welcomeButton{
   height:60px;
   width:250px;
@@ -53,6 +55,26 @@
   transition: all 0.4s ease 0s;
   text-decoration: none;
   }
+
+  .newRecipeButton{
+    text-align: center;
+ 
+    width:250px;
+    color: #494949;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 10px;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    background-color: #97B787;
+    color: white;
+    border-color: transparent;
+    margin: 20px 0;
+   
+    
+  }
+
 
 .navRight{
   display:grid;

@@ -1,13 +1,16 @@
 
 <% if @book.cover.cover_url.present? %>
-<%= image_tag @book.cover.cover_url %>
+  <div class="text-center container">
+    <%= image_tag @book.cover.cover_url %>
+  </div>
 <%end%>
 
 <%= render 'covers/form', cover: @book.cover %>
 
+<%= render 'form', book: @book %>
 <% if @book.recipes.any? %>
-  <span><%= link_to 'View Book', @book, class: "btn btn-primary" %></span>
-  <span><%= link_to "View Cover", book_cover_path(@book),  class: "btn btn-primary", target: "_blank" %></span>
+  <span><%= link_to 'View Book', @book, class: "okButton" %></span>
+  <span><%= link_to "View Cover", book_cover_path(@book),  class: "okButton", target: "_blank" %></span>
  
 <% end %>
-<%= render 'form', book: @book %>
+

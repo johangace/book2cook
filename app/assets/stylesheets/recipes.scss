@@ -8,6 +8,11 @@
   margin-top: 50px;
 }
 
+
+.name-profile {
+  
+}
+
 .leftContent{
   padding:10px;
   float: left;
@@ -30,11 +35,30 @@
   background-image: url("/iconfinder-camera.jpeg")
 }
 
-.textBox{
-  height:150px;
-  width:300px;
-  border-radius: 10px;
+.container {
+  border-radius: 7px;
+  background-color:white;
+  margin: 20px auto;
+  padding: 5%;
+  
 }
+
+
+.coverContainer {
+  margin-bottom: -7%;
+  padding-top: 3px;
+  
+}
+
+
+
+
+.textBooks{
+  height:150px;
+  width:50%;
+  border-radius: 10px; 
+}
+
 
 label{
   color:black;

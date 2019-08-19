@@ -10,7 +10,7 @@
 }
 
 .bookName {
-color: #494949;
+color: black;
 font-size: 2rem;
 } 
 
@@ -58,6 +58,14 @@ font-size: 2rem;
   height: 200px;
 }
 
+
+.updatecoverButton{
+  position: absolute;
+
+
+}
+
+
 .plus {
   font-size: 200px !important;
   color: grey;
@@ -103,6 +111,29 @@ font-size: 2rem;
   text-align: center;
   border-color: transparent;
 }
+
+.okButton{
+  margin-bottom: 8%;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  background-color: white;
+  color:  #97B787;
+  text-align: center;
+  border-color: transparent;
+  border: 5px solid  #97B787;
+  width: 200px;
+}
+
+.margin10 {
+  margin-left: 10%;
+ 
+ }
+ 
+
 
 @media only screen and (max-width: 950px) {
   
@@ -160,6 +191,9 @@ font-size: 2rem;
   text-align: center;
   border-color: transparent;
 }
+
+
+
 .bookImage{
   padding-top: 10%;
   padding-bottom: 5%;
@@ -173,3 +207,4 @@ font-size: 2rem;
   text-decoration: none;
   } 
 }
+
