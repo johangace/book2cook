@@ -5,11 +5,9 @@
   <h1 ><%= @user.profile.name %>'s Recipes</h1>
 </div>
 
-
-
 <div class="container ">
 
-<div class=" newRecipe ">
+<div class=" newRecipe text-center mb-2 ">
   <%= link_to 'New Recipe', new_recipe_path, class: "newRecipeButton" %>
 </div>
 <table class="table">
@@ -31,7 +29,9 @@
           </td>
         <% end %>
         <td><%= link_to recipe.name, recipe ,  class: "bookName" %></td>
-        <td>
+        
+        
+        <td> <%= image_tag recipe.image_url %> <td>
           <% if recipe.user == current_user %>
               <div class="btn-group float-right">
                 <%= link_to 'Edit', edit_recipe_path(recipe), class: "greenButton" %>
