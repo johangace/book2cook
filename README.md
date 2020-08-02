@@ -1,35 +1,18 @@
-# Final Project
+<br> 
+<iframe  width="853" height="480" src="https://www.youtube.com/embed/JHg7fRLHzIs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## TODO: Submit your wireframes in the form of a pull request
+**This Application was selected as the best coding project on [Wyncode's](htttps://wyncode.co) Cohort 34 Pitch Night.**
 
-This example wireframe lives in `readme_assets/wireframe_example.jpg`
+<!-- [Link to App](https://book2cook.herokuapp.com/) -->
 
-Swap it out with your actual wireframes...
+Book2Cook is application that allows you to share homemade recipes with friends and family in a social media style.
+With Book2Cook you can create and print unique cookbooks have them delivered at your home. We built this application because we believe in the power of sharing good meals and preserving traditions.
 
-![Wireframe Example](readme_assets/wireframe_example.jpg)
+Features:
 
-## TODO: Submit your ERD in the form of a pull request
+-   Easily create recipes.
+-   Build and customize your own cookbook.
+-   Have your cookbook delivered at your home.
+-   Share Recipes with Family and Friends.
 
-This example Entity Relational Diagram lives in `readme_assets/erd_example.png`
-
-![ERD Example](readme_assets/erd_example.png)
-
-Swap it out with your actual ERD...
-
-## Deployment
-
-If your project uses the `react_on_rails` gem, you will need to:
-
-* `heroku create your-app-name`
-* `heroku buildpacks:set --index 1 heroku/nodejs`
-* `heroku buildpacks:add heroku/ruby`
-* `git push heroku master`
-* `heroku run rails db:migrate`
-* optional: `heroku run rails db:seed`
-
-## Instructor Checklist
-
-* Clone this repo, create a new one
-* Set branch protection rules on `master` (There is a CODEOWNERS file in this repo, but it is up to you how you want to use it.)
-* Create a Slack Channel, invite team members and TAs
-* in Slack: `/github subscribe wyncode/repo_name issues,reviews,comments`
+Book2Cook relies heavily on Ruby on Rails. I used the Prawn Gem to generate the pdf books and added the 3D Flipbook Plugin built on jQuery to give the book an animation effect. The Stripe API handles the payments while the LULU API takes care of the printing and shipping of the book.
