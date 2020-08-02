@@ -1,6 +1,8 @@
-<br> 
-<iframe  width="853" height="480" src="https://www.youtube.com/embed/JHg7fRLHzIs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+Demo: https://www.youtube.com/embed/JHg7fRLHzIs 
+
+
+Group Project 
 **This Application was selected as the best coding project on [Wyncode's](htttps://wyncode.co) Cohort 34 Pitch Night.**
 
 <!-- [Link to App](https://book2cook.herokuapp.com/) -->
