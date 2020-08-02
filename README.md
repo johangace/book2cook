@@ -15,4 +15,4 @@ Features:
 -   Have your cookbook delivered at your home.
 -   Share Recipes with Family and Friends.
 
-Book2Cook relies heavily on Ruby on Rails. I used the Prawn Gem to generate the pdf books and added the 3D Flipbook Plugin built on jQuery to give the book an animation effect. The Stripe API handles the payments while the LULU API takes care of the printing and shipping of the book.
+Book2Cook relies on Ruby on Rails, React.js and AWS S3. I used the Prawn Gem to generate the pdf books and added the 3D Flipbook Plugin built on jQuery to give the book an animation effect. The Stripe API handles the payments while the LULU API takes care of the printing and shipping of the book.
