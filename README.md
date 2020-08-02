@@ -1,8 +1,6 @@
 
 Demo: https://www.youtube.com/embed/JHg7fRLHzIs 
 
-
-Group Project 
 **This Application was selected as the best coding project on [Wyncode's](htttps://wyncode.co) Cohort 34 Pitch Night.**
 
 <!-- [Link to App](https://book2cook.herokuapp.com/) -->
